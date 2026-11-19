@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recyco · ULJO</title>
+<meta name="description" content="Recyco: a recycling app for Montréal that rewards what you bring back.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=74">
+<link rel="stylesheet" href="assets/css/system.css?v=89">
+</head>
+<body class="page-case">
+
+<a class="skip" href="#main">Skip to content</a>
+
+
+<!-- ══════════════════════════ TOP BAR ══════════════════════════ -->
+<!-- data-topbar: "page" stays; "project" shows on the way up; "home" waits for the lab -->
+<header class="topbar topbar--project" data-topbar="project">
+  <a class="topbar__logo" href="index.html" aria-label="ULJO, home"><img src="assets/img/uljo-wordmark.png" width="152" height="88" alt=""></a>
+  <nav class="topbar__nav" aria-label="Primary">
+    <a class="topbar__link" href="index.html#playground">Playground</a>
+    <div class="topbar__work" data-work>
+      <button class="topbar__link" type="button" aria-expanded="false" aria-controls="work-menu">Projects<svg class="topbar__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <ul class="topbar__menu" id="work-menu">
+        <li><a href="recyco.html"><b>Recyco</b><small>Making recycling gratifying</small></a></li>
+        <li><a href="track-on.html"><b>Track On</b><small>A voice memo designed for musicians</small></a></li>
+        <li><a href="easy-checkout.html"><b>Easy-Checkout</b><small>Making self-checkouts accessible</small></a></li>
+        <li><a href="manic-gt.html"><b>Manic GT</b><small>Making parking easy</small></a></li>
+        <li class="topbar__posters"><a href="index.html#posters"><b>Posters</b><small>Groove Yard, Piranhas &Eacute;TS and more</small><span class="topbar__thumbs" aria-hidden="true"><img src="assets/img/poster-thumb-1.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-2.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-3.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-4.webp" alt="" loading="lazy"></span></a></li>
+      </ul>
+    </div>
+    <a class="topbar__link" href="about.html">My Universe</a>
+    <a class="topbar__link" href="contact.html">Keep in touch</a>
+  </nav>
+  <div class="topbar__actions">
+    <a class="pill pill--solid" href="#prototype">Try prototype</a>
+  </div>
+  <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="topbar-sheet" aria-label="Open menu" data-sheet-toggle><span></span><span></span></button>
+  <nav class="topbar__sheet" id="topbar-sheet" aria-label="Menu" data-sheet>
+    <a href="index.html#playground">Playground</a>
+    <a href="index.html#work">Projects</a>
+    <div class="topbar__sub"><a href="recyco.html">Recyco</a><a href="track-on.html">Track On</a><a href="easy-checkout.html">Easy-Checkout</a><a href="manic-gt.html">Manic GT</a><a href="index.html#posters">Posters</a></div>
+    <a href="about.html">My Universe</a>
+    <a href="contact.html">Keep in touch</a>
+    <div class="topbar__acts">
+      <a class="pill pill--solid" href="#prototype">Try prototype</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <div class="case-col">
+
+  <!-- the prototype itself, on its device: use it right here -->
+  <figure class="case-plate wide case-plate--hero case-plate--try show__item--re" id="prototype" aria-label="Recyco, the prototype, try it">
+    <div class="dev dev--phone" data-dev-still data-w="440" data-h="956" data-top="52" data-bottom="22" data-bar="#0e0f0d" data-ink="light">
+      <div class="dev__front">
+        <div class="dev__glass">
+          <img class="dev__poster" src="assets/img/blocks/recyco-poster.webp?v=2" width="440" height="956" alt="Recyco: its first screen">
+          <iframe data-src="assets/proto/recyco.html" width="440" height="956" title="Recyco, the prototype, try it"></iframe>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- the title, under the project's block -->
+  <header class="case-title">
+    <div>
+      <p class="case-title__name">Recyco</p>
+      <h1 class="case-title__h">Making recycling gratifying.</h1>
+    </div>
+    <p class="case-title__year">2026</p>
+  </header>
+
+  <section class="case-block" id="project">
+    <h2 class="case-h">The project.</h2>
+    <div class="case-body">
+      <p>Recyco is a recycling app for Montr&eacute;al. <b class="hi">Snap what you want to recycle, drop it</b> in a Recyco box at a partner grocery store, and <b class="hi">earn points</b>.</p>
+      <p>Points turn into <b class="hi">grocery discounts</b>. A map shows the nearest drop-off and walks you there, and a calendar keeps track of pickup days.</p>
+    </div>
+  </section>
+
+  <p class="case-thanks">Thank you for checking Recyco.</p>
+
+  </div><!-- /.case-col -->
+
+</main>
+
+<script src="assets/js/main.js?v=122"></script>
+<script src="assets/js/feel.js?v=71"></script>
+</body>
+</html>

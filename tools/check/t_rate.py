@@ -1,0 +1,12 @@
+import sys, time, json; sys.path.insert(0, __file__.rsplit('/', 1)[0])
+from h import T
+t = T(1440, 900)
+t.nav('http://localhost:4322/index.html?mute'); time.sleep(5)
+print('after load', t.rate())
+t.ev('document.querySelector("[data-world-play]").click(); return 1'); time.sleep(3)
+print('walk +3s', t.rate()); time.sleep(8); print('walk +11s', t.rate())
+t.shot('rate-a', 50); print('after a screenshot', t.rate())
+t.click(700, 300); time.sleep(1); print('after a real click', t.rate())
+t.key('KeyW'); time.sleep(1); print('after a key', t.rate())
+t.ev('window.__world.Q.enterStudio(); return 1'); time.sleep(5); print('studio +5s', t.rate())
+print(t.ev('return { hidden: document.hidden, focus: document.hasFocus(), vis: document.visibilityState }'))

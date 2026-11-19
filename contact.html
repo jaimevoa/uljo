@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Keep in touch · ULJO</title>
+<meta name="description" content="Let's chat. Write to Jaime Olivares: jaime.voa@gmail.com.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=74">
+<link rel="stylesheet" href="assets/css/system.css?v=89">
+</head>
+<body class="page-contact">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ══════════════════════════ TOP BAR ══════════════════════════ -->
+<!-- data-topbar: "page" stays; "project" shows on the way up; "home" waits for the lab -->
+<header class="topbar" data-topbar="page">
+  <a class="topbar__logo" href="index.html" aria-label="ULJO, home"><img src="assets/img/uljo-wordmark.png" width="152" height="88" alt=""></a>
+  <nav class="topbar__nav" aria-label="Primary">
+    <a class="topbar__link" href="index.html#playground">Playground</a>
+    <div class="topbar__work" data-work>
+      <button class="topbar__link" type="button" aria-expanded="false" aria-controls="work-menu">Projects<svg class="topbar__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <ul class="topbar__menu" id="work-menu">
+        <li><a href="recyco.html"><b>Recyco</b><small>Making recycling gratifying</small></a></li>
+        <li><a href="track-on.html"><b>Track On</b><small>A voice memo designed for musicians</small></a></li>
+        <li><a href="easy-checkout.html"><b>Easy-Checkout</b><small>Making self-checkouts accessible</small></a></li>
+        <li><a href="manic-gt.html"><b>Manic GT</b><small>Making parking easy</small></a></li>
+        <li class="topbar__posters"><a href="index.html#posters"><b>Posters</b><small>Groove Yard, Piranhas &Eacute;TS and more</small><span class="topbar__thumbs" aria-hidden="true"><img src="assets/img/poster-thumb-1.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-2.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-3.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-4.webp" alt="" loading="lazy"></span></a></li>
+      </ul>
+    </div>
+    <a class="topbar__link" href="about.html">My Universe</a>
+    <a class="topbar__link" href="contact.html">Keep in touch</a>
+  </nav>
+  <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="topbar-sheet" aria-label="Open menu" data-sheet-toggle><span></span><span></span></button>
+  <nav class="topbar__sheet" id="topbar-sheet" aria-label="Menu" data-sheet>
+    <a href="index.html#playground">Playground</a>
+    <a href="index.html#work">Projects</a>
+    <div class="topbar__sub"><a href="recyco.html">Recyco</a><a href="track-on.html">Track On</a><a href="easy-checkout.html">Easy-Checkout</a><a href="manic-gt.html">Manic GT</a><a href="index.html#posters">Posters</a></div>
+    <a href="about.html">My Universe</a>
+    <a href="contact.html">Keep in touch</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="chat col" aria-labelledby="chat-title">
+    <!-- pass 96: one picture, as on the home page: "Let's chat." over his head (a little behind it, written in outline
+         and filled as the page scrolls), he in the middle of a white pill; the note on the right -->
+    <div class="talk">
+      <div class="talk__stage">
+        <div class="talk__pill" aria-hidden="true"></div>
+        <h1 class="talk__h draw-title" id="chat-title" data-draw-title data-draw-scroll>Let&rsquo;s chat.</h1>
+        <img class="talk__portrait" src="assets/img/me-portrait.webp" width="1100" height="935"
+             alt="Jaime Olivares, smiling, in black and white">
+      </div>
+
+      <!-- the note: it goes straight to Jaime (FormSubmit) -->
+      <form class="talk__form" data-chat data-to="jaime.voa@gmail.com" novalidate aria-labelledby="chat-title">
+        <!-- a trap for robots: people never see it, so it stays empty -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+        <div class="field field--email">
+          <label for="chat-email">Your email</label>
+          <input id="chat-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </div>
+        <div class="field field--subject">
+          <label for="chat-subject">Subject</label>
+          <input id="chat-subject" name="subject" type="text" maxlength="140" required placeholder="What it&rsquo;s about">
+        </div>
+        <div class="field field--message">
+          <label for="chat-message">Your message</label>
+          <textarea id="chat-message" name="message" required placeholder="Hi Jaime,"></textarea>
+        </div>
+        <div class="chat__send">
+          <button class="pill pill--solid" type="submit">Send</button>
+          <a class="chat__mail" href="mailto:jaime.voa@gmail.com">jaime.voa@gmail.com</a>
+        </div>
+        <p class="chat__status" role="status" data-chat-status></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/main.js?v=122"></script>
+<script src="assets/js/feel.js?v=71"></script>
+</body>
+</html>

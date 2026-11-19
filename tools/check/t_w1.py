@@ -1,0 +1,28 @@
+"""pass 78: the roof of the house (no blue line across it), the sound switch on the title screen and on a walk"""
+import sys, time, json; sys.path.insert(0, __file__.rsplit('/', 1)[0])
+from h import T, sheet
+t = T(1440, 900)
+t.nav('http://localhost:4322/index.html'); time.sleep(2)           # (not ?mute: the switch itself is what is looked at; the browser is muted)
+t.ev('sessionStorage.removeItem("uljo-quests"); localStorage.removeItem("uljo-sound"); return 1')
+t.nav('http://localhost:4322/index.html'); time.sleep(10)
+names = []
+def shot(n, s=.5): t.shot(n, 84, s); names.append(n)
+b = t.ev('const b = document.querySelector("[data-world-sound]"), r = b.getBoundingClientRect(); const e = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return { hidden: b.hidden, box: [Math.round(r.left), Math.round(r.top), Math.round(r.width)], under: e && e.closest("[data-world-sound]") ? "the button" : (e && e.className), cls: b.className, label: b.getAttribute("aria-label") }')
+print('menu:', b); shot('w1-menu')
+t.click(b['box'][0] + 20, b['box'][1] + 20); time.sleep(1.2)
+print('after a click (music was starting):', t.ev('const W = window.__world; return { muted: W.muted, paused: W.music.el ? W.music.el.paused : null, want: W.music.want, vol: W.music.vol, cls: document.querySelector("[data-world-sound]").className, stored: localStorage.getItem("uljo-sound") }'))
+t.click(b['box'][0] + 20, b['box'][1] + 20); time.sleep(1.6)
+print('after a second click:', t.ev('const W = window.__world; return { muted: W.muted, paused: W.music.el ? W.music.el.paused : null, want: +W.music.want.toFixed(2), vol: +W.music.vol.toFixed(2), stored: localStorage.getItem("uljo-sound") }'))
+t.ev('document.querySelector("[data-world-play]").click(); return 1'); time.sleep(9)
+b2 = t.ev('const b = document.querySelector("[data-world-sound]"), r = b.getBoundingClientRect(), k = document.querySelector("[data-world-back]").getBoundingClientRect(); const e = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return { box: [Math.round(r.left), Math.round(r.top), Math.round(r.width)], back: [Math.round(k.left), Math.round(k.top), Math.round(k.width)], under: e && e.closest("[data-world-sound]") ? "the button" : (e && e.className) }')
+print('walk:', b2, t.ev('const W = window.__world; return { paused: W.music.el ? W.music.el.paused : null, want: +W.music.want.toFixed(2), vol: +W.music.vol.toFixed(2) }'))
+# the house, from where he took his picture: by the chair, looking at the roof
+t.ev('''const W = window.__world; W.sayDone && W.sayDone(); W.player.n.copy(W.at(2.2, 2.6)); W.player.fwd.copy(W.at(-1.2, -1.6)).sub(W.player.n).normalize(); W.cam.f.copy(W.player.fwd); W.cam.pitch = -.1; return 1''')
+time.sleep(2.5); shot('w1-house', 1)
+t.ev('''const W = window.__world; W.player.n.copy(W.at(4.5, 4.5)); W.player.fwd.copy(W.at(0, 0)).sub(W.player.n).normalize(); W.cam.f.copy(W.player.fwd); W.cam.pitch = -.05; return 1''')
+time.sleep(2.5); shot('w1-house2', 1)
+t.click(b2['box'][0] + 20, b2['box'][1] + 20); time.sleep(1.0)
+print('muted on the walk:', t.ev('const W = window.__world; return { muted: W.muted, paused: W.music.el ? W.music.el.paused : null, cls: document.querySelector("[data-world-sound]").className }')); shot('w1-walk-muted')
+t.click(b2['box'][0] + 20, b2['box'][1] + 20); time.sleep(.5)
+t.ev('localStorage.removeItem("uljo-sound"); return 1')
+print([str(l)[:200] for l in t.logs() if 'rror' in str(l)][:4])

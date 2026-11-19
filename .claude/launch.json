@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "uljo",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4321",
+        "--bind",
+        "127.0.0.1"
+      ],
+      "port": 4321
+    },
+    {
+      "name": "trailer-sink",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "tools/trailer/sink.py"
+      ],
+      "port": 4398
+    }
+  ]
+}

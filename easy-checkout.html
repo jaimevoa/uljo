@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Easy Checkout · ULJO</title>
+<meta name="description" content="Easy-Checkout: making Decathlon's self-checkout accessible to people living with disabilities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=74">
+<link rel="stylesheet" href="assets/css/system.css?v=89">
+</head>
+<body class="page-case">
+
+<a class="skip" href="#main">Skip to content</a>
+
+
+<!-- ══════════════════════════ TOP BAR ══════════════════════════ -->
+<!-- data-topbar: "page" stays; "project" shows on the way up; "home" waits for the lab -->
+<header class="topbar topbar--project" data-topbar="project">
+  <a class="topbar__logo" href="index.html" aria-label="ULJO, home"><img src="assets/img/uljo-wordmark.png" width="152" height="88" alt=""></a>
+  <nav class="topbar__nav" aria-label="Primary">
+    <a class="topbar__link" href="index.html#playground">Playground</a>
+    <div class="topbar__work" data-work>
+      <button class="topbar__link" type="button" aria-expanded="false" aria-controls="work-menu">Projects<svg class="topbar__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <ul class="topbar__menu" id="work-menu">
+        <li><a href="recyco.html"><b>Recyco</b><small>Making recycling gratifying</small></a></li>
+        <li><a href="track-on.html"><b>Track On</b><small>A voice memo designed for musicians</small></a></li>
+        <li><a href="easy-checkout.html"><b>Easy-Checkout</b><small>Making self-checkouts accessible</small></a></li>
+        <li><a href="manic-gt.html"><b>Manic GT</b><small>Making parking easy</small></a></li>
+        <li class="topbar__posters"><a href="index.html#posters"><b>Posters</b><small>Groove Yard, Piranhas &Eacute;TS and more</small><span class="topbar__thumbs" aria-hidden="true"><img src="assets/img/poster-thumb-1.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-2.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-3.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-4.webp" alt="" loading="lazy"></span></a></li>
+      </ul>
+    </div>
+    <a class="topbar__link" href="about.html">My Universe</a>
+    <a class="topbar__link" href="contact.html">Keep in touch</a>
+  </nav>
+  <div class="topbar__actions">
+    <button class="pill pill--outline walk" type="button" data-walk data-walk-src="assets/audio/balado-easy-checkout.mp3" aria-pressed="false" aria-label="Play the project walkthrough, Jaime explains the project"><span class="walk__waves" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="walk__label" data-walk-label>Project walkthrough</span></button>
+    <a class="pill pill--solid" href="#prototype">Try prototype</a>
+  </div>
+  <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="topbar-sheet" aria-label="Open menu" data-sheet-toggle><span></span><span></span></button>
+  <nav class="topbar__sheet" id="topbar-sheet" aria-label="Menu" data-sheet>
+    <a href="index.html#playground">Playground</a>
+    <a href="index.html#work">Projects</a>
+    <div class="topbar__sub"><a href="recyco.html">Recyco</a><a href="track-on.html">Track On</a><a href="easy-checkout.html">Easy-Checkout</a><a href="manic-gt.html">Manic GT</a><a href="index.html#posters">Posters</a></div>
+    <a href="about.html">My Universe</a>
+    <a href="contact.html">Keep in touch</a>
+    <div class="topbar__acts">
+      <button class="pill pill--outline walk" type="button" data-walk data-walk-src="assets/audio/balado-easy-checkout.mp3" aria-pressed="false" aria-label="Play the project walkthrough, Jaime explains the project"><span class="walk__waves" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="walk__label" data-walk-label>Project walkthrough</span></button>
+      <a class="pill pill--solid" href="#prototype">Try prototype</a>
+    </div>
+  </nav>
+</header>
+
+<!-- the universe — slides in from the right -->
+<main id="main">
+
+  <div class="case-col">
+
+
+  <!-- pass 79: the page opens on the kiosk itself, played by the scroll (it was a still picture) -->
+  <!-- the kiosk, played backwards by the scroll: from its screen out to the
+       whole machine. 124 stills, 4K on sharp large screens. -->
+  <section class="scrub wide" id="intro" data-chapter="Intro" data-scrub
+           data-frames="assets/frames/kiosk/f{i}.webp"
+           data-frames-hd="assets/frames/kiosk-4k/f{i}.webp" data-frame-count="124">
+    <div class="scrub__sticky">
+      <div class="scrub__frame">
+        <canvas data-scrub-canvas width="1240" height="694"
+                role="img" aria-label="The kiosk's screen drawing back to show the whole machine"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- the title, under the project's block -->
+  <header class="case-title">
+    <div>
+      <p class="case-title__name">Easy-Checkout</p>
+      <h1 class="case-title__h">Making self-checkouts accessible.</h1>
+    </div>
+    <p class="case-title__year">2026</p>
+  </header>
+
+  <!-- ═══════════════════════ THE PROBLEM ═══════════════════════ -->
+  <section class="case-block" id="problem" data-chapter="The problem">
+    <h2 class="case-h">The problem.</h2>
+    <div class="case-body">
+      <p><b class="hi">200,000 self-checkouts</b> were installed in 2023. For people with <b class="hi">limited hand mobility, low vision or a wheelchair</b>, they are hard to use.</p>
+      <p>With Decathlon, I asked: <b class="hi">how might we make self-checkout accessible to everyone?</b></p>
+    </div>
+  </section>
+
+  <!-- the answer, announced before the whole station is shown -->
+  <section class="case-intro" id="introducing" data-chapter="Introducing" aria-labelledby="introducing-h">
+    <p class="case-intro__kicker">Introducing</p>
+    <h2 class="case-intro__name" id="introducing-h">Easy-Checkout</h2>
+  </section>
+
+  <!-- the whole station -->
+  <figure class="case-plate wide case-plate--station">
+    <img src="assets/img/ec-station.webp" width="2800" height="1892" loading="lazy"
+         alt="The Easy-Checkout station: an accessible lane sign, the kiosk and its Easy Pad on a lowered counter, and a low drop-off bay">
+  </figure>
+
+  <!-- ═══════════════════ THE DIGITAL EXPERIENCE ═══════════════════ -->
+  <section class="case-block" id="digital" data-chapter="The digital experience">
+    <h2 class="case-h">The digital<br>experience.</h2>
+    <div class="case-body">
+      <p>A <b class="hi">calmer, clearer screen</b>: one step per page, big buttons, high contrast.</p>
+      <p>It reads itself aloud. <b class="hi">Audio, contrast, text size, 15 languages</b> and a Help button are always one tap away.</p>
+    </div>
+  </section>
+
+  <h2 class="case-cue">Try the screen.</h2>
+
+  <!-- the screen prototype on the left, a note on the right that follows it:
+       whichever screen you're on, what it's for and why it's built that way -->
+  <section class="proto-duo" id="prototype" data-chapter="Try the screen" aria-label="Easy Checkout, screen prototype">
+    <div class="proto-full__frame">
+      <iframe src="assets/proto/screen.html" title="Easy Checkout, screen prototype, try it"
+              loading="lazy" allow="autoplay" data-proto-screen></iframe>
+      <button class="proto-cover" type="button" data-proto-cover aria-label="Start the prototype">
+        <span>Click to start</span>
+      </button>
+    </div>
+    <aside class="proto-note" aria-live="polite" data-proto-note>
+      <p class="proto-note__step" data-note-step>Screen 1 of 8</p>
+      <h3 class="proto-note__title" data-note-title>Welcome</h3>
+      <p class="proto-note__text" data-note-text></p>
+    </aside>
+  </section>
+
+  <p class="case-cue">Now, the physical side.</p>
+
+
+  <!-- ═══════════════════ THE PHYSICAL EXPERIENCE ═══════════════════ -->
+  <section class="case-block" id="physical" data-chapter="The physical experience">
+    <h2 class="case-h">The physical<br>experience.</h2>
+    <div class="case-body">
+      <p>A <b class="hi">low drop-off bay</b>, so nothing is lifted high, and <b class="hi">leg space</b> for a wheelchair.</p>
+      <p>The <b class="hi">Easy Pad</b>: five big tactile keys. No touchscreen needed.</p>
+    </div>
+  </section>
+
+  <div class="case-pair wide">
+    <figure class="case-plate">
+      <img src="assets/img/ec-drop-off.jpg" width="2560" height="1707"
+           alt="The basket bay, marked DROP ITEMS HERE with a large arrow">
+    </figure>
+    <figure class="case-plate">
+      <img src="assets/img/ec-leg-space.jpg" width="2560" height="1706"
+           alt="Clear leg space under the counter, letting a wheelchair pull right up">
+    </figure>
+  </div>
+
+  <!-- the Easy Pad, two big pictures side by side: swipe (or use the arrows) -->
+  <section class="swipe" data-chapter="The Easy Pad" aria-roledescription="carousel" aria-label="The Easy Pad">
+    <div class="swipe__track" data-swipe tabindex="0">
+      <figure class="swipe__item">
+        <img src="assets/img/ec-easypad.jpg" width="2560" height="1707" loading="lazy"
+             alt="The Easy Pad: five oversized, colour-coded tactile keys">
+      </figure>
+      <figure class="swipe__item">
+        <img src="assets/img/ec-fist-click.jpg" width="2560" height="1707" loading="lazy"
+             alt="A clenched hand pressing an Easy Pad key from a wheelchair">
+      </figure>
+    </div>
+    <div class="swipe__nav">
+      <div class="swipe__dots" data-swipe-dots>
+        <button type="button" aria-label="Picture 1" aria-current="true"></button>
+        <button type="button" aria-label="Picture 2" aria-current="false"></button>
+      </div>
+      <div class="swipe__arrows" data-swipe-arrows>
+      <button class="swipe__btn" type="button" data-swipe-prev aria-label="Previous picture">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="swipe__btn" type="button" data-swipe-next aria-label="Next picture">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="case-cue">Try the Easy Pad.</h2>
+
+  <!-- the Easy Pad prototype, the same size as the screen one, its note on the
+       right explaining each key as you use it -->
+  <section class="proto-duo proto-duo--pad" id="easy-pad" data-chapter="Try the Easy Pad" aria-label="Easy Pad, hardware prototype">
+    <div class="proto-full__frame proto-full__frame--pad">
+      <iframe src="assets/proto/easy-pad.html#guide" title="Easy Pad, hardware prototype, try it with the keys"
+              loading="lazy" allow="autoplay" data-proto-pad></iframe>
+    </div>
+    <aside class="proto-note" aria-live="polite" data-pad-note>
+      <p class="proto-note__step" data-note-step>The Easy Pad</p>
+      <h3 class="proto-note__title" data-note-title>Five keys, no touchscreen</h3>
+      <p class="proto-note__text" data-note-text></p>
+    </aside>
+  </section>
+
+  <!-- ══════════════════════════ THE PROCESS ══════════════════════════ -->
+  <section class="case-process" id="process" data-chapter="The process">
+    <h2 class="case-process__h">The Process.</h2>
+    <p class="case-process__sub">How I made Easy-Checkout.</p>
+  </section>
+
+  <p class="case-thanks">Thanks for checking it out.</p>
+
+  </div><!-- /.case-col -->
+
+</main>
+
+
+
+
+<script src="assets/js/main.js?v=122"></script>
+<script src="assets/js/feel.js?v=71"></script>
+</body>
+</html>

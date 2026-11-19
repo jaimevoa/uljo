@@ -1,0 +1,31 @@
+"""pass 90: the home page — Lab, the order, the slowed wheel in the lab, the space above his head, Keep in touch in place"""
+import sys, time, json; sys.path.insert(0, __file__.rsplit('/', 1)[0])
+from h import T, sheet
+t = T(1440, 900)
+t.p.call('Network.enable'); t.p.call('Network.setCacheDisabled', cacheDisabled=True)
+t.nav('http://localhost:4322/index.html?mute&x=%d' % int(time.time())); time.sleep(9)
+names = []
+def shot(n, s=.5): t.shot(n, 84, s); names.append(n)
+print('title + order:', t.ev('return [document.querySelector(".lab__name").textContent.trim(), document.querySelector(".lab__name").style.getPropertyValue("--lab-dx"), [...document.querySelectorAll(".show__item .show__name")].map((e) => e.textContent)]'))
+L = t.ev('const L = window.__lab, sec = document.querySelector(".lab"); return { top: sec.getBoundingClientRect().top + scrollY, lands: L.devs.map((d, i) => +L.landOf(i).toFixed(2)), total: L.total }')
+print(L)
+# a hard throw of the wheel inside the lab (after the title's hold): 400 px every 40 ms for 4 s
+t.ev('window.scrollTo(0, %f); return 1' % (L['top'] + 1.2 * 900)); time.sleep(1.5)
+t.ev('window.__seen = {}; window.__trace = []; const tick = () => { const L = window.__lab, sec = document.querySelector(".lab"); const s = -sec.getBoundingClientRect().top / innerHeight; window.__trace.push([Math.round(performance.now()), +s.toFixed(3)]); L.devs.forEach((d, i) => { if (d.state === "down") window.__seen[i] = (window.__seen[i] || 0) + 1; }); if (window.__trace.length < 600) requestAnimationFrame(tick); }; requestAnimationFrame(tick); return 1')
+t0 = time.time()
+while time.time() - t0 < 4: t.wheel(720, 450, 400); time.sleep(.04)
+time.sleep(1)
+tr = t.ev('return window.__trace'); seen = t.ev('return window.__seen')
+sp = max((tr[i + 30][1] - tr[i][1]) / ((tr[i + 30][0] - tr[i][0]) / 1000) for i in range(len(tr) - 31))
+print('wheel: from s=%.2f to %.2f in %.1f s; top speed %.2f screens/s; projects seen standing (frames):' % (tr[0][1], tr[-1][1], (tr[-1][0] - tr[0][0]) / 1000, sp), seen)
+# the end: the room over his head, then Keep in touch
+t.ev('const m = document.querySelector(".me"); window.scrollTo(0, m.getBoundingClientRect().top + scrollY - 420); return 1'); time.sleep(2)
+print('gap posters to head:', t.ev('const c = document.querySelector("[data-carousel=poster]").getBoundingClientRect(), p = document.querySelector(".me__portrait").getBoundingClientRect(); return Math.round(p.top - c.bottom)'))
+shot('me0')
+t.ev('const m = document.querySelector(".me"); window.scrollTo(0, m.getBoundingClientRect().top + scrollY - 160); return 1'); time.sleep(1.2)
+k = t.ev('const b = document.querySelector("[data-me-open]"), r = b.getBoundingClientRect(); const e = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return [r.left + r.width / 2, r.top + r.height / 2, !!(e && e.closest("[data-me-open]"))]')
+print('keep in touch button:', k); t.click(k[0], k[1]); time.sleep(.4); shot('me1'); time.sleep(.9); shot('me2')
+print('after click:', t.ev('const s = document.querySelector(".me__stage").getBoundingClientRect(), p = document.querySelector(".me__pop").getBoundingClientRect(); return [location.pathname, document.querySelector(".me").className, [s.left, s.right].map(Math.round), [p.left, p.top, p.right, p.bottom].map(Math.round), document.activeElement && document.activeElement.id]'))
+t.key('Escape'); time.sleep(1); shot('me3')
+print('closed:', t.ev('return [document.querySelector(".me").className, document.querySelector(".me__pop").hidden]'))
+print(sheet(names, 'sheet-p90', 2, 82)); print([str(l)[:220] for l in t.logs() if 'rror' in str(l)][:6])

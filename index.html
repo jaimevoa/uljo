@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ULJO · Jaime Olivares</title>
+<meta name="description" content="Jaime Olivares, Founder &amp; Creative Director of ULJO. Designed in Montreal, est. 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=74">
+<link rel="stylesheet" href="assets/css/system.css?v=89">
+<noscript><style>.hero--home .hero__img{visibility:visible!important}</style></noscript>
+</head>
+<body>
+
+<!-- the intro: a shooting star draws the ULJO mark over the blurred page,
+     then the page clears. Skipped coming back from another page of the site. -->
+<div class="intro" data-intro aria-hidden="true">
+  <div class="intro__mark">
+    <span class="intro__glow"></span>
+    <span class="intro__wipe"><img class="intro__word" src="assets/img/uljo-logo.png" width="1200" height="693" alt=""></span>
+    <span class="intro__shine"><i></i></span>
+    <span class="intro__trail"></span>
+    <img class="intro__star" src="assets/img/uljo-o-star.png" width="266" height="216" alt="">
+  </div>
+</div>
+<script>
+  (function () {
+    var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    var back = nav && nav.type === 'back_forward', reload = nav && nav.type === 'reload';
+    var inside = document.referrer && document.referrer.indexOf(location.origin) === 0;   // came from a page of the site
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var el = document.querySelector('[data-intro]');
+    if (calm || (!reload && (back || inside))) el.remove();
+    else document.body.classList.add('is-arriving');
+  })();
+</script>
+
+<a class="skip" href="#main">Skip to content</a>
+
+
+
+<!-- ══════════════════════════ TOP BAR ══════════════════════════ -->
+<!-- data-topbar: "page" stays; "project" shows on the way up; "home" waits for the lab -->
+<header class="topbar is-hidden" data-topbar="home">
+  <a class="topbar__logo" href="index.html" aria-label="ULJO, home"><img src="assets/img/uljo-wordmark.png" width="152" height="88" alt=""></a>
+  <nav class="topbar__nav" aria-label="Primary">
+    <a class="topbar__link" href="#playground" data-world-play>Playground</a>
+    <div class="topbar__work" data-work>
+      <button class="topbar__link" type="button" aria-expanded="false" aria-controls="work-menu">Projects<svg class="topbar__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <ul class="topbar__menu" id="work-menu">
+        <li><a href="recyco.html"><b>Recyco</b><small>Making recycling gratifying</small></a></li>
+        <li><a href="track-on.html"><b>Track On</b><small>A voice memo designed for musicians</small></a></li>
+        <li><a href="easy-checkout.html"><b>Easy-Checkout</b><small>Making self-checkouts accessible</small></a></li>
+        <li><a href="manic-gt.html"><b>Manic GT</b><small>Making parking easy</small></a></li>
+        <li class="topbar__posters"><a href="index.html#posters"><b>Posters</b><small>Groove Yard, Piranhas &Eacute;TS and more</small><span class="topbar__thumbs" aria-hidden="true"><img src="assets/img/poster-thumb-1.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-2.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-3.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-4.webp" alt="" loading="lazy"></span></a></li>
+      </ul>
+    </div>
+    <a class="topbar__link" href="about.html">My Universe</a>
+    <a class="topbar__link" href="contact.html">Keep in touch</a>
+  </nav>
+  <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="topbar-sheet" aria-label="Open menu" data-sheet-toggle><span></span><span></span></button>
+  <nav class="topbar__sheet" id="topbar-sheet" aria-label="Menu" data-sheet>
+    <a href="#playground" data-world-play>Playground</a>
+    <a href="index.html#work">Projects</a>
+    <div class="topbar__sub"><a href="recyco.html">Recyco</a><a href="track-on.html">Track On</a><a href="easy-checkout.html">Easy-Checkout</a><a href="manic-gt.html">Manic GT</a><a href="index.html#posters">Posters</a></div>
+    <a href="about.html">My Universe</a>
+    <a href="contact.html">Keep in touch</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════════════════ HERO ══════════════════════════ -->
+  <section class="hero hero--home hero--universe" data-hero>
+    <img class="hero__img" src="assets/img/hero.jpg" width="3364" height="4710"
+         alt="Pixel art: someone playing guitar by a campfire on a hill at dusk, pines behind">
+    <!-- the clip is only fetched where the 3D scene cannot run (world.js) -->
+    <video class="hero__motion" muted loop playsinline preload="none"
+           aria-hidden="true" data-hero-clip>
+      <source data-src="assets/video/hero-camp.mp4" type="video/mp4">
+    </video>
+    <!-- the little earth: the same campsite as a real place (world.js) -->
+    <canvas class="hero__world" data-world aria-hidden="true"></canvas>
+
+
+    <!-- the menu, like a game's title screen: the mark, then Play / Work / About Me -->
+    <nav class="hero-menu" data-hero-menu aria-label="Primary">
+      <div class="hero-menu__mark">
+        <div class="hero-menu__smoke" aria-hidden="true"></div>
+        <h1 class="hero-menu__logo"><img src="assets/img/uljo-star-open.png" alt="ULJO" width="1014" height="586"></h1>
+      </div>
+      <ul class="hero-menu__list">
+        <li><a class="hero-menu__item" href="#playground" data-world-play>Playground</a></li>
+        <li><a class="hero-menu__item" href="#work">Projects</a></li>
+        <li><a class="hero-menu__item" href="about.html">My Universe</a></li>
+        <li><a class="hero-menu__item" href="contact.html">Keep in touch</a></li>
+      </ul>
+    </nav>
+
+    <!-- scroll down: a small glass circle under the menu -->
+    <span class="hero-scroll scroll-sign" data-hero-scroll aria-hidden="true">
+      <span class="scroll-sign__word">scroll</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+
+    <!-- walking the planet: the way back, the keys (no words), a thumb ring on a phone -->
+    <button class="world-back" type="button" data-world-back hidden aria-label="Back to the campfire">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <!-- pass 78: the music, off and on (world.js) -->
+    <button class="world-sound" type="button" data-world-sound hidden aria-pressed="false" aria-label="Turn the music off">
+      <svg class="world-sound__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.6h3.1L12 5.6v12.8l-4.9-4H4z" fill="currentColor"/><path d="M15.4 9.1a4.1 4.1 0 0 1 0 5.8M17.9 6.6a7.6 7.6 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <svg class="world-sound__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.6h3.1L12 5.6v12.8l-4.9-4H4z" fill="currentColor"/><path d="M16 9.6l4.8 4.8M20.8 9.6L16 14.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="world-keys" data-world-hint hidden aria-hidden="true">
+      <i class="world-keys__k world-keys__k--up"></i><i class="world-keys__k world-keys__k--left"></i><i class="world-keys__k world-keys__k--down"></i><i class="world-keys__k world-keys__k--right"></i>
+    </div>
+    <div class="world-stick" data-world-stick hidden aria-hidden="true"><i></i></div>
+    <!-- at the river, once he has looked into it -->
+    <div class="world-about" data-world-about hidden><a class="world-go world-go--link" href="about.html"><span>Enter My Universe</span></a></div>
+    <!-- the planet's map (bottom left), the word about the place he is at, and Evi's hello -->
+    <div class="world-map" data-world-map hidden><canvas width="264" height="264" aria-label="Map of the planet: Lab, About, Studio, Contact"></canvas></div>
+    <div class="world-place" data-world-place hidden><b></b><button class="world-go" type="button" data-world-go><kbd>E</kbd><span>Enter</span></button></div>
+    <div class="world-coins" data-world-coins hidden aria-live="polite"><svg viewBox="0 0 20 24" aria-hidden="true"><path d="M5 3h10l4 6-9 13L1 9z" fill="#7fd08a"/><path d="M5 3h10l-5 6zM1 9h18l-9 13z" fill="#3f9a56"/><path d="M5 3l5 6H1zM15 3l4 6h-9z" fill="#b6efb0"/></svg><b>0</b> / <span>0</span></div>
+    <div class="world-race" data-world-race hidden aria-live="polite">Ring race <b></b></div>
+    <button class="world-jump" type="button" data-world-jump hidden aria-label="Jump">Jump</button>
+    <div class="world-card world-quests" data-world-card hidden aria-live="polite">
+      <img class="world-quests__face" src="assets/img/jaime-face.webp" alt="" width="56" height="56">
+      <div class="world-quests__body"><b>Missions:</b>
+        <ol class="world-quests__list">
+          <li data-quest="trackon">Record a song idea in the studio</li>
+          <li data-quest="recyco">Recycle the batteries</li>
+          <li data-quest="manic">Find a parking spot with the Manic GT</li>
+        </ol>
+      </div>
+    </div>
+    <figure class="world-quote" data-world-quote hidden><blockquote data-world-quote-text>After all, all we really do for eternity, is to sit around the Fire.</blockquote><figcaption>Ram Dass</figcaption></figure>
+    <div class="world-flash" data-world-flash aria-hidden="true"></div>
+    <div class="world-talk" data-world-say hidden>
+      <div class="world-talk__who" aria-hidden="true"><canvas class="world-talk__evi" data-evi-face width="192" height="192"></canvas></div>
+      <div class="world-talk__body"><strong class="world-talk__name">Evi</strong><p class="world-talk__text" data-world-say-text></p></div>
+      <button class="world-talk__act" type="button" data-world-say-act hidden></button>
+    </div>
+  </section>
+
+  <!-- the listening room: Evi opens it. The menus and the bar fade away; the
+       scene, a real record (no colour) and the way back remain -->
+  <button class="listen-back" type="button" data-listen-back hidden aria-label="Back">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="player" data-player hidden
+       data-songs='[
+         {"title":"Instagram · Dec 2025","artist":"Jaime Olivares","src":"assets/audio/instagram-1.mp3","ig":"https://www.instagram.com/reel/DRuTgSYkVqA/"},
+         {"title":"Instagram · Nov 2025","artist":"Jaime Olivares","src":"assets/audio/instagram-2.mp3","ig":"https://www.instagram.com/reel/DRJEtxrkRR8/"}]'>
+    <!-- a real record: grooves and a plain label turning; the light stays put -->
+    <div class="player__vinyl" data-player-vinyl>
+      <div class="player__disc vinyl" data-player-disc>
+        <span class="vinyl__label" aria-hidden="true"><b>Jaime Olivares</b><span>Side B &middot; 33&#8531;</span></span>
+        <i></i>
+      </div>
+      <span class="vinyl__sheen" aria-hidden="true"></span>
+    </div>
+    <div class="player__card">
+      <div class="player__meta">
+        <strong data-player-title></strong>
+        <span data-player-artist></span>
+      </div>
+      <button class="player__mute" type="button" data-player-mute aria-label="Mute" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path class="player__mute-on" d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="player__mute-off" d="M16.5 8.5a5 5 0 010 7M18.5 6.5a8 8 0 010 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="player__bar" data-player-bar><i></i></div>
+      <div class="player__ctl">
+        <button type="button" data-player-prev aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 12l8-6v12zM4 12l8-6v12z" fill="currentColor"/></svg></button>
+        <button type="button" data-player-toggle aria-label="Pause" aria-pressed="true">
+          <svg class="player__ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></svg>
+          <svg class="player__ico-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
+        </button>
+        <button type="button" data-player-next aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6l8 6-8 6zM12 6l8 6-8 6z" fill="currentColor"/></svg></button>
+      </div>
+    </div>
+    <audio data-player-audio preload="none"></audio>
+  </div>
+
+  <!-- ══════════════════════ UNDERGROUND LAB ══════════════════════ -->
+  <!-- One pinned scene, driven by the scroll: the heading arrives, we ride
+       down through the ground under the hill, the lab's doors come up and
+       part, we pass through the words into the lab — and the projects come
+       out of the dark one by one, as the devices they run on. -->
+  <section class="lab lab--descent" id="work" data-lab>
+    <div class="lab__pin">
+      <!-- the shaft: lights slide up past you on the way down -->
+      <div class="lab__shaft" data-lab-shaft aria-hidden="true"></div>
+      <!-- inside the lab: blue light, a floor running away -->
+      <div class="lab__inside" data-lab-inside aria-hidden="true">
+        <div class="lab__lights"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="lab__glow"></div>
+      </div>
+      <!-- the doors at the bottom of the shaft -->
+      <div class="lab__doors" data-lab-doors aria-hidden="true">
+        <div class="lab__door lab__door--l"></div>
+        <div class="lab__door lab__door--r"></div>
+        <i class="lab__seam"></i>
+        <span class="lab__lock"><i></i></span>
+      </div>
+      <!-- the shaft's guide rails -->
+      <div class="lab__rails" aria-hidden="true"><i></i><i></i></div>
+
+      <div class="lab__head" data-navi-from data-lab-head>
+        <h2 class="lab__title">
+          <span class="lab__kicker">Welcome to my</span>
+          <span class="lab__name"><span>Underground</span> <span>Lab</span></span>
+        </h2>
+      </div>
+
+      <!-- behind the gate, before the work: why he does it -->
+      <div class="lab__why lab__why--split" data-lab-why>
+        <div class="lab__why-words">
+          <p class="lab__why-text">Behind any labels we give ourselves, we are <b class="w">regular humans</b>. I&rsquo;m especially pulled by the idea of easing people&rsquo;s <b class="w">pain</b>, whether it&rsquo;s by building <b class="w">tools</b> or with my <b class="w">music</b>. The following is a curated selection of my <b class="w">projects</b>. Thank you so, so much for your time. I&rsquo;m very <b class="w">grateful</b>.</p>
+          <p class="lab__why-sign">All love, Jaime.</p>
+        </div>
+        <figure class="lab__why-pic"><img src="assets/img/me-autumn.webp" width="938" height="1406" alt="Jaime crouching in an autumn forest, a ten-string guitar in one hand, holding up a yellow maple leaf with the other" decoding="async"><figcaption><b>Jaime Olivares</b><span>Human, Designer, Musician, Creator of ULJO</span></figcaption></figure>
+      </div>
+
+      <!-- ══════════════════ PROJECTS ══════════════════ -->
+      <!-- four devices, one at a time: each comes out of the dark turning on
+           itself, lands flat, and is the real prototype — use it right there.
+           Its name, a line and Explore arrive on the left. main.js builds the
+           bodies' thickness and drives it all from the scroll. -->
+      <div class="show" data-show aria-label="Selected projects" role="region">
+
+        <!-- Recyco -->
+        <article class="show__item show__item--re" data-show-item>
+          <div class="show__bar"><a class="btn show__more" href="recyco.html">Case study</a><button class="show__x" type="button" data-stage-close aria-label="Close the prototype"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+          <div class="show__text">
+            <h3 class="show__name">Recyco</h3>
+            <p class="show__line">Making recycling gratifying.</p>
+            <div class="show__actions">
+              <button class="btn show__try" type="button" data-try aria-label="Try the prototype, Recyco">Try prototype</button>
+              <a class="btn show__cta" href="recyco.html" aria-label="Case study, Recyco">Case study</a>
+            </div>
+          </div>
+          <div class="show__stage">
+            <div class="dev dev--phone" data-dev data-w="440" data-h="956" data-top="52" data-bottom="22" data-bar="#0e0f0d" data-ink="light">
+              <div class="dev__front">
+                <div class="dev__glass">
+                  <img class="dev__poster" src="assets/img/blocks/recyco-poster.webp?v=2" width="440" height="956" alt="Recyco: its first screen" decoding="async">
+                  <iframe data-src="assets/proto/recyco.html" width="440" height="956" title="Recyco, the app, try it" tabindex="-1"></iframe>
+                </div>
+              </div>
+              <div class="dev__back" aria-hidden="true"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Track On -->
+        <article class="show__item show__item--to" data-show-item>
+          <div class="show__bar"><a class="btn show__more" href="track-on.html">Case study</a><button class="show__x" type="button" data-stage-close aria-label="Close the prototype"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+          <div class="show__text">
+            <h3 class="show__name">Track On</h3>
+            <p class="show__line">A voice memo designed for musicians.</p>
+            <div class="show__actions">
+              <button class="btn show__try" type="button" data-try aria-label="Try the prototype, Track On">Try prototype</button>
+              <a class="btn show__cta" href="track-on.html" aria-label="Case study, Track On">Case study</a>
+            </div>
+          </div>
+          <div class="show__stage">
+            <div class="dev dev--phone" data-dev data-w="402" data-h="874" data-top="52" data-bottom="22" data-bar="#D9D9D4">
+              <div class="dev__front">
+                <div class="dev__glass">
+                  <img class="dev__poster" src="assets/img/blocks/track-on-poster.webp" width="402" height="874" alt="Track On: its first screen" decoding="async">
+                  <iframe data-src="assets/proto/track-on/index.html" width="402" height="874" title="Track On, the app, try it" tabindex="-1"></iframe>
+                </div>
+              </div>
+              <div class="dev__back" aria-hidden="true"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Easy-Checkout -->
+        <article class="show__item show__item--ec" data-show-item>
+          <div class="show__bar"><a class="btn show__more" href="easy-checkout.html">Case study</a><button class="show__x" type="button" data-stage-close aria-label="Close the prototype"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+          <div class="show__text">
+            <h3 class="show__name">Easy-Checkout</h3>
+            <p class="show__line">Making self&#8209;checkouts accessible.</p>
+            <div class="show__actions">
+              <button class="btn show__try" type="button" data-try aria-label="Try the prototype, Easy-Checkout">Try prototype</button>
+              <a class="btn show__cta" href="easy-checkout.html" aria-label="Case study, Easy-Checkout">Case study</a>
+            </div>
+          </div>
+          <div class="show__stage">
+            <div class="dev dev--screen" data-dev data-w="1224" data-h="792">
+              <div class="dev__front">
+                <div class="dev__glass">
+                  <img class="dev__poster" src="assets/img/blocks/ec-slide-1.webp" width="1224" height="792" alt="Easy-Checkout: its first screen" decoding="async">
+                  <iframe data-src="assets/proto/screen.html" width="1224" height="792" title="Easy-Checkout, the kiosk screen, try it" tabindex="-1"></iframe>
+                </div>
+              </div>
+              <div class="dev__back" aria-hidden="true"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Manic GT -->
+        <article class="show__item show__item--gt" data-show-item>
+          <div class="show__bar"><a class="btn show__more" href="manic-gt.html">Case study</a><button class="show__x" type="button" data-stage-close aria-label="Close the prototype"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+          <div class="show__text">
+            <h3 class="show__name">Manic GT</h3>
+            <p class="show__line">Making parking easy.</p>
+            <div class="show__actions">
+              <button class="btn show__try" type="button" data-try aria-label="Try the prototype, Manic GT">Try prototype</button>
+              <a class="btn show__cta" href="manic-gt.html" aria-label="Case study, Manic GT">Case study</a>
+            </div>
+          </div>
+          <div class="show__stage">
+            <!-- pass 82: no 3D car any more: a tablet, as Easy-Checkout's -->
+            <div class="dev dev--screen dev--gt" data-dev data-w="1280" data-h="832">
+              <div class="dev__front">
+                <div class="dev__glass">
+                  <img class="dev__poster" src="assets/img/blocks/manic-gt-poster.webp?v=2" width="1280" height="832" alt="Manic GT: its first screen" decoding="async">
+                  <iframe data-src="assets/proto/manic-gt/index.html" width="1280" height="832" title="Manic GT, the centre screen, try it" tabindex="-1"></iframe>
+                </div>
+              </div>
+              <div class="dev__back" aria-hidden="true"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ POSTER CAROUSEL ══════════════════════ -->
+  <section class="carousel" id="posters" data-carousel="poster" aria-roledescription="carousel" aria-label="Posters">
+    <div class="carousel__stage">
+      <div class="carousel__track">
+        <button class="slide" type="button" data-caption="Groove Yard" data-year="2026" data-note="Pop-up at Café Cantinova: a curated vinyl and book sale with a live DJ. Saturday 23 May, 12 to 6 PM, 4035 Saint-Ambroise, Montreal. Made with Audiophonie and Reverb.">
+          <img src="assets/img/poster-01-groove-yard.jpg" alt="Groove Yard pop-up poster">
+        </button>
+        <button class="slide" type="button" data-caption="Piranhas ÉTS" data-year="2026" data-note="Season launch for the Piranhas ÉTS flag-football team, 2026. Collège St-Jean-Vianney, Sunday 13 September.">
+          <img src="assets/img/poster-02-piranhas.jpg" alt="Piranhas ÉTS flag-football season poster">
+        </button>
+        <button class="slide" type="button" data-caption="Krispy Kreme" data-year="2025" data-note="Doughnut fundraiser for the industrial design students. Thursday 14 November in the main hall: 1 for $2, 6 for $8, 12 for $15.">
+          <img src="assets/img/poster-03-krispy-kreme.jpg" alt="Krispy Kreme fundraiser poster">
+        </button>
+        <button class="slide" type="button" data-caption="Soirée jeux de société" data-year="2025" data-note="Board-game night at l’Exode. Friday 8 November from 18:45: drinks, snacks and games, room A3.84.">
+          <img src="assets/img/poster-04-jeux-de-societe.jpg" alt="Board-game night poster">
+        </button>
+      </div>
+    </div>
+    <button class="carousel__arrow carousel__arrow--prev" type="button" data-carousel-prev aria-label="The poster before"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="carousel__arrow carousel__arrow--next" type="button" data-carousel-next aria-label="The next poster"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    
+  </section>
+
+  <!-- the logo carousel is set aside for now (pass 52): tools/ref/2026-09-30/logo-carousel-set-aside.html -->
+
+
+  <!-- ══════════════════════════ ME ══════════════════════════ -->
+  <!-- a white pill, the portrait standing in it with his head above its top,
+       then the words and two buttons, all centred -->
+  <section class="me" id="about" aria-label="About Jaime">
+    <div class="me__stage">
+      <div class="me__pill" aria-hidden="true"></div>
+      <!-- pass 96: talking, "Let's chat." stands over his head, a little behind it (outline first, then filled) -->
+      <h2 class="me__chat-h draw-title" id="pop-title" data-draw-title>Let&rsquo;s chat.</h2>
+      <img class="me__portrait" src="assets/img/me-portrait.webp" width="1100" height="935"
+           alt="Jaime Olivares, smiling, in black and white" loading="lazy">
+    </div>
+    <h2 class="me__hi">Nice to meet you.</h2>
+    <p class="me__nice">Let&rsquo;s connect.</p>
+    <!-- pass 90: Keep in touch opens a note here: he moves to the right, the note comes up on the left -->
+    <div class="me__pop" data-me-pop hidden>
+      <form class="me__form" data-chat data-to="jaime.voa@gmail.com" novalidate aria-labelledby="pop-title">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+        <div class="field field--email"><label for="pop-email">Your email</label><input id="pop-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+        <div class="field field--subject"><label for="pop-subject">Subject</label><input id="pop-subject" name="subject" type="text" maxlength="140" required placeholder="What it&rsquo;s about"></div>
+        <div class="field field--message"><label for="pop-message">Your message</label><textarea id="pop-message" name="message" required placeholder="Hi Jaime,"></textarea></div>
+        <div class="chat__send"><button class="pill pill--solid" type="submit">Send</button><a class="chat__mail" href="mailto:jaime.voa@gmail.com">jaime.voa@gmail.com</a></div>
+        <p class="chat__status" role="status" data-chat-status></p>
+      </form>
+    </div>
+    <div class="me__ctas">
+      <a class="btn me__cta" href="contact.html" data-me-open>Keep in touch</a>
+      <a class="btn me__cta me__cta--ghost" href="about.html">My Universe</a>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- audio walkthrough, waiting on its memos -->
+<audio data-audio-track preload="none"></audio>
+
+<!-- poster lightbox -->
+<div class="lightbox" data-lightbox hidden>
+  <button class="lightbox__scrim" type="button" data-lightbox-close aria-label="Close"></button>
+  <div class="lightbox__panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <figure class="lightbox__art"><img alt="" data-lightbox-img></figure>
+    <div class="lightbox__side">
+      <h2 id="lightbox-title" data-lightbox-title></h2>
+      <p data-lightbox-note></p>
+      <div class="lightbox__nav">
+        <button type="button" data-lightbox-prev aria-label="Previous poster">←</button>
+        <button type="button" data-lightbox-next aria-label="Next poster">→</button>
+      </div>
+    </div>
+    <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close">
+      <span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<script src="assets/js/main.js?v=122"></script>
+<script src="assets/js/feel.js?v=71"></script>
+<script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
+<script type="module" src="assets/js/world.js?v=174"></script>
+</body>
+</html>

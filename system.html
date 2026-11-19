@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design system · ULJO</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=74">
+<link rel="stylesheet" href="assets/css/system.css?v=89">
+<style>
+  /* this page only: the reference sheet's own layout */
+  .ds{padding:calc(var(--bar-h) + var(--s-6)) 0 var(--s-8)}
+  .ds__sec{margin-top:var(--s-7)}
+  .ds__sec > h2{margin-bottom:var(--s-4)}
+  .ds__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:var(--s-3)}
+  .sw{border-radius:var(--r-2);overflow:hidden;background:var(--c-surface);border:1px solid var(--c-line)}
+  .sw i{display:block;height:6rem}
+  .sw p{padding:.9rem 1rem 1rem;font-size:var(--t-small);color:var(--c-fg-2);line-height:1.5}
+  .sw b{display:block;color:#fff;font-weight:500;font-size:var(--t-ui)}
+  .ds__row{display:grid;grid-template-columns:14rem 1fr;gap:var(--s-4);align-items:baseline;padding:var(--s-3) 0;border-top:1px solid var(--c-line)}
+  .ds__spec{font-size:var(--t-small);color:var(--c-fg-2);line-height:1.6}
+  .ds__spec b{display:block;color:#fff;font-weight:500;font-size:var(--t-ui);margin-bottom:.25rem}
+  .ds__demo{display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:center}
+  .ds__box{background:var(--c-surface);border:1px solid var(--c-line)}
+  @media (max-width:48em){.ds__row{grid-template-columns:1fr;gap:var(--s-2)}}
+</style>
+</head>
+<body class="page-system">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ══════════════════════════ TOP BAR ══════════════════════════ -->
+<!-- data-topbar: "page" stays; "project" shows on the way up; "home" waits for the lab -->
+<header class="topbar" data-topbar="page">
+  <a class="topbar__logo" href="index.html" aria-label="ULJO, home"><img src="assets/img/uljo-wordmark.png" width="152" height="88" alt=""></a>
+  <nav class="topbar__nav" aria-label="Primary">
+    <a class="topbar__link" href="play.html">Play</a>
+    <div class="topbar__work" data-work>
+      <button class="topbar__link" type="button" aria-expanded="false" aria-controls="work-menu">Projects<svg class="topbar__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <ul class="topbar__menu" id="work-menu">
+        <li><a href="recyco.html"><b>Recyco</b><small>Making recycling gratifying</small></a></li>
+        <li><a href="track-on.html"><b>Track On</b><small>A voice memo designed for musicians</small></a></li>
+        <li><a href="easy-checkout.html"><b>Easy-Checkout</b><small>Making self-checkouts accessible</small></a></li>
+        <li><a href="manic-gt.html"><b>Manic GT</b><small>Making parking easy</small></a></li>
+        <li class="topbar__posters"><a href="index.html#posters"><b>Posters</b><small>Groove Yard, Piranhas &Eacute;TS and more</small><span class="topbar__thumbs" aria-hidden="true"><img src="assets/img/poster-thumb-1.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-2.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-3.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-4.webp" alt="" loading="lazy"></span></a></li>
+      </ul>
+    </div>
+    <a class="topbar__link" href="contact.html">Contact</a>
+    <a class="topbar__link" href="about.html">About</a>
+  </nav>
+  <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="topbar-sheet" aria-label="Open menu" data-sheet-toggle><span></span><span></span></button>
+  <nav class="topbar__sheet" id="topbar-sheet" aria-label="Menu" data-sheet>
+    <a href="play.html">Play</a>
+    <a href="index.html#work">Projects</a>
+    <div class="topbar__sub"><a href="recyco.html">Recyco</a><a href="track-on.html">Track On</a><a href="easy-checkout.html">Easy-Checkout</a><a href="manic-gt.html">Manic GT</a><a href="index.html#posters">Posters</a></div>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main id="main" class="ds col">
+
+  <p class="eyebrow">ULJO</p>
+  <h1 class="t-display">Design system</h1>
+  <p class="t-lead" style="margin-top:var(--s-2);max-width:40ch">One set of colours, sizes and weights for every page. Everything here comes from <b class="hi">assets/css/system.css</b>.</p>
+
+  <!-- colour -->
+  <section class="ds__sec" aria-labelledby="c-h">
+    <h2 class="t-title" id="c-h">Colour</h2>
+    <div class="ds__grid">
+      <div class="sw"><i style="background:#000;box-shadow:inset 0 -1px 0 var(--c-line)"></i><p><b>Black</b>--c-bg · #000<br>The ground of every page</p></div>
+      <div class="sw"><i style="background:#fff"></i><p><b>White</b>--c-fg · #fff<br>Words, primary buttons, cards</p></div>
+      <div class="sw"><i style="background:#9c9c9c"></i><p><b>Grey</b>--c-fg-2 · #9c9c9c<br>Secondary words: copy, subtitles</p></div>
+      <div class="sw"><i style="background:#5e5e5e"></i><p><b>Dim</b>--c-fg-3 · #5e5e5e<br>Placeholders, rests</p></div>
+      <div class="sw"><i style="background:#242427"></i><p><b>Field</b>--c-field · #242427<br>Inputs</p></div>
+      <div class="sw"><i style="background:#4A9BD3"></i><p><b>ULJO blue</b>--c-accent · #4A9BD3<br>You are here, focus</p></div>
+    </div>
+  </section>
+
+  <!-- type -->
+  <section class="ds__sec" aria-labelledby="t-h">
+    <h2 class="t-title" id="t-h">Type</h2>
+    <p class="t-body" style="margin-bottom:var(--s-3)">Space Grotesk, tracked &minus;7&nbsp;%, three weights: <b class="hi">700</b> for titles, <b class="hi">500</b> for anything you press or read at a glance, <b class="hi">400</b> for reading.</p>
+    <div class="ds__row"><div class="ds__spec"><b>Display</b>68 · 700 · −5%<br>The one big statement of a page</div><p class="t-display">Dive into my universe.</p></div>
+    <div class="ds__row"><div class="ds__spec"><b>Title</b>42 · 700 · −4.5%<br>Section titles, cue lines</div><p class="t-title">Try the digital experience.</p></div>
+    <div class="ds__row"><div class="ds__spec"><b>Heading</b>34 · 700 · −4%<br>Blocks and notes</div><p class="t-heading">Five keys, no touchscreen</p></div>
+    <div class="ds__row"><div class="ds__spec"><b>Lead</b>28 · 400 · −3% · grey<br>Reading copy; the phrases that matter in white</div><p class="t-lead">I believe the term that separates engineering and design is <b class="hi">empathy.</b></p></div>
+    <div class="ds__row"><div class="ds__spec"><b>Body</b>19 · 400 · −1.5% · grey<br>Notes, captions, small copy</div><p class="t-body">A single instruction and a picture of the blue area.</p></div>
+    <div class="ds__row"><div class="ds__spec"><b>Interface</b>16 · 500 · −2%<br>Nav, buttons, labels</div><p style="font-size:var(--t-ui);font-weight:500;letter-spacing:-.02em">Project walkthrough</p></div>
+    <div class="ds__row"><div class="ds__spec"><b>Small</b>13 · 500<br>Time codes, steps</div><p class="t-small">1:50:20 to 1:56:30</p></div>
+  </section>
+
+  <!-- buttons -->
+  <section class="ds__sec" aria-labelledby="b-h">
+    <h2 class="t-title" id="b-h">Buttons</h2>
+    <div class="ds__row"><div class="ds__spec"><b>Primary</b>White; hovered, a step greyer</div><div class="ds__demo"><a class="pill pill--solid" href="#b-h">Try prototype</a><button class="pill pill--solid" type="button" style="--pill-h:3.5rem;--pill-x:2rem">Send</button></div></div>
+    <div class="ds__row"><div class="ds__spec"><b>Secondary</b>An outline; hovered, a grey wash, never white</div><div class="ds__demo"><a class="pill pill--outline" href="#b-h">Project walkthrough</a><a class="pill pill--outline" href="#b-h">Listen on Spotify</a></div></div>
+    <div class="ds__row"><div class="ds__spec"><b>Project</b>In the project's own colour; the words roll, an arrow comes in</div><div class="ds__demo"><a class="btn" href="#b-h" style="--btn:#3943B3;--btn-fg:#fff;min-height:3.75rem;padding:0 1.875rem;font-size:1.125rem">Explore</a></div></div>
+  </section>
+
+  <!-- fields -->
+  <section class="ds__sec" aria-labelledby="f-h">
+    <h2 class="t-title" id="f-h">Fields</h2>
+    <div class="chat__form" style="padding:0;margin-top:0">
+      <div class="field"><label for="ds-email">Your email:</label><input id="ds-email" type="email" placeholder="you@example.com"></div>
+      <div class="field field--wide"><label for="ds-msg">Your message</label><textarea id="ds-msg" placeholder="Hi Jaime," style="height:9rem"></textarea></div>
+    </div>
+  </section>
+
+  <!-- corners and space -->
+  <section class="ds__sec" aria-labelledby="r-h">
+    <h2 class="t-title" id="r-h">Corners and space</h2>
+    <div class="ds__grid">
+      <div class="sw"><i class="ds__box" style="border-radius:var(--r-1);margin:1rem;height:4rem"></i><p><b>10</b>--r-1 · plates</p></div>
+      <div class="sw"><i class="ds__box" style="border-radius:var(--r-2);margin:1rem;height:4rem"></i><p><b>20</b>--r-2 · covers, menus</p></div>
+      <div class="sw"><i class="ds__box" style="border-radius:var(--r-3);margin:1rem;height:4rem"></i><p><b>40</b>--r-3 · video, big fields</p></div>
+      <div class="sw"><i class="ds__box" style="border-radius:var(--r-card);margin:1rem;height:4rem"></i><p><b>80</b>--r-card · the white cards</p></div>
+    </div>
+    <p class="t-body" style="margin-top:var(--s-4)">Space moves in steps of 8: 8 · 16 · 24 · 40 · 64 · 96 · 144 · 208 (<b class="hi">--s-1</b> to <b class="hi">--s-8</b>). The top bar is 72 px tall (60 on a phone), never more than 75.</p>
+  </section>
+
+</main>
+
+<script src="assets/js/main.js?v=122"></script>
+<script src="assets/js/feel.js?v=71"></script>
+</body>
+</html>

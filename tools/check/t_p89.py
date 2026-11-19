@@ -1,0 +1,48 @@
+"""pass 89: the home page — menu, scroll word, slogans, Case study opening in place and going back"""
+import sys, time, json; sys.path.insert(0, __file__.rsplit('/', 1)[0])
+from h import T, sheet
+t = T(1440, 900)
+t.p.call('Network.enable'); t.p.call('Network.setCacheDisabled', cacheDisabled=True)
+t.nav('http://localhost:4322/index.html?mute&x=%d' % int(time.time())); time.sleep(9)
+names = []
+def shot(n, s=.5): t.shot(n, 84, s); names.append(n)
+shot('p0')
+print('menu:', t.ev('const a = document.querySelector(".hero-menu__item"); return [getComputedStyle(a).color, getComputedStyle(a, "::before").backgroundImage.slice(0, 30), getComputedStyle(a, "::before").backgroundColor, getComputedStyle(a, "::after").display, !!document.querySelector(".hero-menu__tm"), getComputedStyle(document.querySelector("[data-world-sound]")).display]'))
+print('scroll word:', t.ev('const w = document.querySelector(".hero-scroll .scroll-sign__word"); const r = w.getBoundingClientRect(); return [w.textContent, Math.round(r.top), Math.round(document.querySelector(".hero-scroll svg").getBoundingClientRect().top)]'))
+print('lines:', t.ev('return [...document.querySelectorAll(".show__line")].map((e) => e.textContent).concat([...document.querySelectorAll(".show__cta")].map((e) => e.textContent))'))
+print('track:', t.ev('return [getComputedStyle(document.querySelector(".lab__why-text")).letterSpacing, getComputedStyle(document.querySelector(".show__name")).letterSpacing, getComputedStyle(document.querySelector(".lab__why-text")).fontSize, getComputedStyle(document.querySelector(".lab__why-pic figcaption b")).fontSize, getComputedStyle(document.querySelector(".lab__why-pic figcaption span")).fontSize]'))
+L = t.ev('return [window.__lab.landOf(3), window.__lab.T3]')
+t.ev('window.__go(%f); return 1' % (L[1] + .3)); time.sleep(2); shot('p-why')
+t.ev('window.__go(%f); return 1' % (L[0] + .15)); time.sleep(4)
+hov = t.ev('const d = document.querySelector(".show__item--re .dev__hit"), r = d.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2, getComputedStyle(d).cursor]')
+t.move(hov[0], hov[1]); time.sleep(.8)
+print('hover:', hov[2], t.ev('const d = document.querySelector(".show__item--re .dev"); return [getComputedStyle(d).scale, getComputedStyle(d).borderRadius, getComputedStyle(document.querySelector(".try-tip")).display]'))
+shot('p-re')
+t.move(5, 450); time.sleep(.6)
+cta = t.ev('const b = document.querySelector(".show__item--re .show__cta"), r = b.getBoundingClientRect(); const e = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return [r.left + r.width / 2, r.top + r.height / 2, b.textContent, !!(e && e.closest(".show__cta"))]')
+print('cta:', cta); y0 = t.ev('return scrollY')
+t.click(cta[0], cta[1])
+for i, w in enumerate((.35, .45, .5, .6, 1.2, 1.5)):
+    time.sleep(w); shot('c%d' % i)
+print('cased:', t.ev('return [document.documentElement.className, location.hash, !!document.querySelector(".case-sheet.is-shown"), scrollY]'), 'y0', y0)
+inner = t.ev('const f = document.querySelector(".case-sheet__frame"), d = f.contentDocument; return [d.documentElement.className, getComputedStyle(d.querySelector(".topbar")).display, d.querySelector(".case-title__h").textContent, d.querySelector(".case-plate--try").classList.contains("is-live"), (() => { try { return f.contentWindow.eval("1") && d.querySelector(".case-plate--try iframe").contentWindow.eval("cur"); } catch (e) { return String(e).slice(0, 60); } })()]')
+print('inside:', inner)
+# the device on the home page against the one inside the sheet
+print('match:', t.ev('const a = document.querySelector(".show__item--re .dev__glass").getBoundingClientRect(), f = document.querySelector(".case-sheet__frame").contentDocument.querySelector("[data-dev-still] .dev__glass").getBoundingClientRect(); return [[a.left, a.top, a.width, a.height].map(Math.round), [f.left, f.top, f.width, f.height].map(Math.round)]'))
+# scroll in the case study, then back
+t.wheel(720, 600, 600); time.sleep(1.2); shot('c-scroll')
+print('home scroll unchanged:', t.ev('return scrollY'))
+bk = t.ev('const b = document.querySelector(".case-sheet__back"), r = b.getBoundingClientRect(); const e = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return [r.left + r.width / 2, r.top + r.height / 2, !!(e && e.closest(".case-sheet__back"))]')
+print('back:', bk); t.click(bk[0], bk[1])
+for i, w in enumerate((.3, .5, .7)):
+    time.sleep(w); shot('b%d' % i)
+time.sleep(1)
+print('after:', t.ev('return [document.documentElement.className, location.hash, !!document.querySelector(".case-sheet"), scrollY, document.querySelector(".show__item--re").className]'))
+shot('b-end')
+# posters
+info = t.ev('const c = document.querySelector("[data-carousel=poster]"); const r = c.getBoundingClientRect(); return [r.top + scrollY, r.height]')
+t.ev('window.scrollTo(0, %f); return 1' % (info[0] + info[1] / 2 - 450)); time.sleep(1.5)
+nx = t.ev('const b = document.querySelector("[data-carousel-next]"), r = b.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]')
+t.move(nx[0], nx[1]); time.sleep(.6); shot('po')
+print('arrow hover:', t.ev('const b = document.querySelector("[data-carousel-next]"); return [getComputedStyle(b).backgroundColor, getComputedStyle(b).color, !!document.querySelector(".carousel__foot") && getComputedStyle(document.querySelector(".carousel__foot")).display]'))
+print(sheet(names, 'sheet-p89', 4, 82)); print([str(l)[:220] for l in t.logs() if 'rror' in str(l)][:6])

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Universe · ULJO</title>
+<meta name="description" content="Outside ULJO: Jaime Olivares in a few pictures, his journal, and a night on stage at Cégeps en spectacle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lexend:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=74">
+<link rel="stylesheet" href="assets/css/system.css?v=89">
+<script>/* pass 79: arriving from the water of the playground: the page opens in the water's light (about-world.js lets it go) */
+try { var th = +sessionStorage.getItem('uljo-through'); if (th && Date.now() - th < 9000) { var de = document.documentElement; de.classList.add('from-through'); de.style.background = '#000'; sessionStorage.removeItem('uljo-through');
+  /* pass 90: the water's last picture, carried over: the page opens on it, and it melts into his face here (about-world.js) */
+  de.classList.add('has-shot');
+  setTimeout(function () { de.classList.add('is-shown'); }, 2600); } } catch (e) {}
+</script>
+</head>
+<body class="page-about">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ══════════════════════════ TOP BAR ══════════════════════════ -->
+<!-- data-topbar: "page" stays; "project" shows on the way up; "home" waits for the lab -->
+<header class="topbar" data-topbar="page">
+  <a class="topbar__logo" href="index.html" aria-label="ULJO, home"><img src="assets/img/uljo-wordmark.png" width="152" height="88" alt=""></a>
+  <nav class="topbar__nav" aria-label="Primary">
+    <a class="topbar__link" href="index.html#playground">Playground</a>
+    <div class="topbar__work" data-work>
+      <button class="topbar__link" type="button" aria-expanded="false" aria-controls="work-menu">Projects<svg class="topbar__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <ul class="topbar__menu" id="work-menu">
+        <li><a href="recyco.html"><b>Recyco</b><small>Making recycling gratifying</small></a></li>
+        <li><a href="track-on.html"><b>Track On</b><small>A voice memo designed for musicians</small></a></li>
+        <li><a href="easy-checkout.html"><b>Easy-Checkout</b><small>Making self-checkouts accessible</small></a></li>
+        <li><a href="manic-gt.html"><b>Manic GT</b><small>Making parking easy</small></a></li>
+        <li class="topbar__posters"><a href="index.html#posters"><b>Posters</b><small>Groove Yard, Piranhas &Eacute;TS and more</small><span class="topbar__thumbs" aria-hidden="true"><img src="assets/img/poster-thumb-1.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-2.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-3.webp" alt="" loading="lazy"><img src="assets/img/poster-thumb-4.webp" alt="" loading="lazy"></span></a></li>
+      </ul>
+    </div>
+    <a class="topbar__link" href="about.html">My Universe</a>
+    <a class="topbar__link" href="contact.html">Keep in touch</a>
+  </nav>
+  <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="topbar-sheet" aria-label="Open menu" data-sheet-toggle><span></span><span></span></button>
+  <nav class="topbar__sheet" id="topbar-sheet" aria-label="Menu" data-sheet>
+    <a href="index.html#playground">Playground</a>
+    <a href="index.html#work">Projects</a>
+    <div class="topbar__sub"><a href="recyco.html">Recyco</a><a href="track-on.html">Track On</a><a href="easy-checkout.html">Easy-Checkout</a><a href="manic-gt.html">Manic GT</a><a href="index.html#posters">Posters</a></div>
+    <a href="about.html">My Universe</a>
+    <a href="contact.html">Keep in touch</a>
+  </nav>
+</header>
+
+<!-- the sky: stars in three depths, behind everything on this page -->
+<canvas class="space" data-space aria-hidden="true"></canvas>
+
+<main id="main">
+
+  <!-- ══════════════════════════ THE ECLIPSE ══════════════════════════ -->
+  <!-- the planet's night side, its air lit from behind: orange at the limb,
+       then pink, then blue — the hill's glow on the home page — drifting -->
+  <!-- pass 69: the real planet. It opens close on his face; scrolling pulls back until the whole of
+       ULJO turns in its own light (assets/js/about-world.js). The painted eclipse stays as the fallback. -->
+  <section class="eclipse eclipse--uljo" data-eclipse data-eclipse-3d aria-labelledby="about-title">
+    <div class="eclipse__pin">
+      <canvas class="eclipse__world" data-eclipse-world aria-hidden="true"></canvas>
+      <div class="eclipse__words">
+        <p class="eyebrow">Outside ULJO</p>
+        <h1 class="t-display" id="about-title">Dive into my universe.</h1>
+      </div>
+      <span class="eclipse__scroll scroll-sign" data-eclipse-scroll aria-hidden="true">
+        <span class="scroll-sign__word">scroll</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ THE JOURNAL ══════════════════════════ -->
+  <!-- pass 78: who he is, in a journal. The old leather one (made in Meshy) is adrift; under it a button, "Open journal".
+       Opened, it stands up, its cover swings open, and its pages are turned one by one (den.js): first himself, eating
+       a burger; then, with every page, another side of his life — music, prizes, travels, the bike, cinema, a photo
+       dump. The pages are plain HTML (his photographs taped in, his own words in handwriting). -->
+  <section class="journalsec col" id="journal" aria-label="Jaime&rsquo;s journal">
+    <div class="journal" data-journal>
+      
+      <canvas class="journal__sky" data-journal-canvas aria-hidden="true"></canvas>
+      <button class="journal__open" type="button" data-journal-open aria-label="Open the journal" tabindex="-1"></button>
+    </div>
+    <div class="journal__cta"><h2 class="journal__h">Let&rsquo;s get personal.</h2><button class="btn journal__btn" type="button" data-journal-open>Open journal</button></div>
+  </section>
+
+  <div class="jbook" data-jbook hidden role="dialog" aria-modal="true" aria-label="Jaime&rsquo;s journal">
+    <button class="jbook__scrim" type="button" data-jbook-close aria-label="Close the journal" tabindex="-1"></button>
+    <div class="jbook__stage">
+      <div class="jbook__fly" data-jbook-fly>
+      <div class="jbook__book is-closed is-shut" data-jbook-book>
+      <div class="jbook__board" aria-hidden="true"></div>
+      <div class="jbook__leaf jbook__leaf--cover" data-leaf>
+        <div class="jbook__face jbook__face--f jbook__coverface" data-jbook-cover></div>
+        <div class="jbook__face jbook__face--b jbook__endpaper"></div>
+      </div>
+      <div class="jbook__leaf" data-leaf>
+        <div class="jbook__face jbook__face--f"><figure class="jp" style="--x:8%;--y:13%;--w:84%;--r:-2.5deg"><img data-src="assets/img/about/print-burger.webp" width="1400" height="929" alt="Jaime in a diner booth, about to bite into a burger, looking straight at the camera"><i class="jbook__tape" aria-hidden="true"></i><i class="jbook__tape jbook__tape--b" aria-hidden="true"></i></figure><svg class="jarrow" viewBox="0 0 220 120" aria-hidden="true" style="--x:44%;--y:57%;--w:30%"><path d="M206 22C168 6 118 14 84 44 62 63 42 82 16 92" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" transform="translate(220 120) rotate(180)"/><path d="M44 66C34 78 24 86 14 93 26 96 40 98 54 97" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(220 120) rotate(180)"/></svg><p class="jt jt--big" style="--x:12%;--y:66%;--w:76%">yup, that&rsquo;s me.</p></div>
+        <div class="jbook__face jbook__face--b"><figure class="jp" style="--x:9%;--y:7%;--w:82%;--r:2deg"><img data-src="assets/img/about/j-stage-a.webp" width="1000" height="667" alt="Jaime on a stool on stage, playing a ten-string charango into a microphone, in warm light"><i class="jbook__tape" aria-hidden="true"></i></figure><figure class="jp" style="--x:7%;--y:46%;--w:40%;--r:-4deg"><img data-src="assets/img/about/j-stage-b.webp" width="667" height="1000" alt="Jaime playing on stage before a seated audience, in violet light"><i class="jbook__tape" aria-hidden="true"></i></figure><figure class="jp" style="--x:52%;--y:49%;--w:40%;--r:5deg"><img data-src="assets/img/about/j-stage-c.webp" width="822" height="1000" alt="Jaime playing on a stool, lit in red against the dark"><i class="jbook__tape" aria-hidden="true"></i></figure></div>
+      </div>
+      <div class="jbook__leaf" data-leaf>
+        <div class="jbook__face jbook__face--f"><div class="jwords" style="--x:10%;--y:8%;--w:80%"><p>I don&rsquo;t know much about anything really. But I know <b>how music can make me feel.</b> There&rsquo;s something magical about it, that I can&rsquo;t seem to feel with anything else.</p><p>I believe music can be a great teaching for everyone, especially in design. To truly understand and feel, you have to be someone who feels a lot. And I believe the term that separates engineering and design is <b>empathy.</b> Empathy isn&rsquo;t taught. You either have it or not. <b>Music can be a great way to feel emotions, and express them.</b></p><p class="jbook__sign">Jaime</p></div></div>
+        <div class="jbook__face jbook__face--b"><figure class="jp" style="--x:11%;--y:9%;--w:78%;--r:-2deg"><img data-src="assets/img/about/j-cert.webp" width="955" height="955" alt="Jaime holding a certificate, Meilleure présentation, beside a friend"><i class="jbook__tape" aria-hidden="true"></i><i class="jbook__tape jbook__tape--b" aria-hidden="true"></i></figure><p class="jt jt--cap" style="--x:10%;--y:71%;--w:80%">Meilleure pr&eacute;sentation</p></div>
+      </div>
+      <div class="jbook__leaf" data-leaf>
+        <div class="jbook__face jbook__face--f"><figure class="jp" style="--x:8%;--y:12%;--w:84%;--r:2deg"><img data-src="assets/img/about/j-odyssee.webp" width="1000" height="775" alt="Jaime and three teammates holding envelopes before the banner of L’Odyssée de l’objet en 48 h, an industrial design contest"><i class="jbook__tape" aria-hidden="true"></i><i class="jbook__tape jbook__tape--b" aria-hidden="true"></i></figure><p class="jt jt--cap" style="--x:8%;--y:63%;--w:84%">L&rsquo;Odyss&eacute;e de l&rsquo;objet en 48 h</p><p class="jt jt--sub" style="--x:8%;--y:70.5%;--w:84%">concours de design industriel</p></div>
+        <div class="jbook__face jbook__face--b"><figure class="jp" style="--x:17%;--y:6%;--w:66%;--r:-2deg"><img data-src="assets/img/about/print-dolomites.webp" width="1080" height="1350" alt="Jaime sitting at the very tip of a rock, small against the Dolomites and a wide sky"><i class="jbook__tape" aria-hidden="true"></i></figure><p class="jt" style="--x:9%;--y:69%;--w:82%"><b>I admire nature.</b> This was in 2023, when I went to the Dolomites, in Italy.</p></div>
+      </div>
+      <div class="jbook__leaf" data-leaf>
+        <div class="jbook__face jbook__face--f"><figure class="jp" style="--x:6%;--y:6%;--w:46%;--r:-3deg"><img data-src="assets/img/about/j-lake.webp" width="1000" height="1000" alt="A path along a lawn by a lake, mountains across the water, the sun low"><i class="jbook__tape" aria-hidden="true"></i></figure><figure class="jp" style="--x:55%;--y:9%;--w:39%;--r:4deg"><img data-src="assets/img/about/j-cliffs.webp" width="751" height="1000" alt="A cliff over the sea beyond a meadow of pink flowers"><i class="jbook__tape" aria-hidden="true"></i></figure><figure class="jp" style="--x:6%;--y:45%;--w:52%;--r:2deg"><img data-src="assets/img/about/j-gannets.webp" width="1000" height="751" alt="A colony of gannets on a red cliff above blue water"><i class="jbook__tape" aria-hidden="true"></i></figure><figure class="jp" style="--x:60%;--y:51%;--w:35%;--r:-4deg"><img data-src="assets/img/about/j-village.webp" width="750" height="1000" alt="A village of coloured houses on a rocky shore, small boats in its harbour"><i class="jbook__tape" aria-hidden="true"></i></figure></div>
+        <div class="jbook__face jbook__face--b"><figure class="jp" style="--x:12%;--y:7%;--w:76%;--r:2deg"><img data-src="assets/img/about/print-bike.webp" width="1300" height="1300" alt="Jaime on a loaded bike on a wet road by a forest, turning back to smile"><i class="jbook__tape" aria-hidden="true"></i></figure><p class="jt" style="--x:9%;--y:68%;--w:82%"><b>I love biking.</b> I did a long bike trip from Montreal to Quebec with a friend.</p></div>
+      </div>
+      <div class="jbook__leaf" data-leaf>
+        <div class="jbook__face jbook__face--f"><figure class="jp" style="--x:17%;--y:9%;--w:66%;--r:-3deg"><img data-src="assets/img/about/j-run.webp" width="750" height="1000" alt="Jaime and a friend with race bibs and medals, arms round each other, on a path under trees"><i class="jbook__tape" aria-hidden="true"></i><i class="jbook__tape jbook__tape--b" aria-hidden="true"></i></figure></div>
+        <div class="jbook__face jbook__face--b"><figure class="jp" style="--x:22%;--y:5%;--w:56%;--r:2deg"><img data-src="assets/img/about/print-newyork.webp" width="1000" height="1500" alt="Jaime on a New York subway platform, setting a small camera on a tripod as a train rushes past"><i class="jbook__tape" aria-hidden="true"></i></figure><p class="jt" style="--x:8%;--y:68%;--w:84%"><b>I love cinema.</b> I love taking videos and making cinematic videos. For some reason I feel a deep connection with cinematography and music.</p></div>
+      </div>
+      <div class="jbook__leaf" data-leaf>
+        <div class="jbook__face jbook__face--f"><figure class="jp" style="--x:10%;--y:9%;--w:80%;--r:-2deg"><img data-src="assets/img/about/j-museum.webp" width="1000" height="666" alt="Jaime looking up at a wall of framed pictures in a museum"><i class="jbook__tape" aria-hidden="true"></i></figure><figure class="jp" style="--x:13%;--y:51%;--w:76%;--r:3deg"><img data-src="assets/img/about/j-park.webp" width="1000" height="664" alt="Jaime standing on a lawn downtown, tall buildings behind, on film"><i class="jbook__tape" aria-hidden="true"></i></figure></div>
+        <div class="jbook__face jbook__face--b"><figure class="jp" style="--x:8%;--y:6%;--w:58%;--r:-4deg"><img data-src="assets/img/about/j-kid.webp" width="758" height="1000" alt="An old print: Jaime as a small boy in a painting smock, his hands covered in paint"><i class="jbook__tape" aria-hidden="true"></i></figure><figure class="jp" style="--x:50%;--y:47%;--w:43%;--r:5deg"><img data-src="assets/img/about/j-bow.webp" width="750" height="1000" alt="Jaime and other performers on a stage after a show"><i class="jbook__tape" aria-hidden="true"></i></figure></div>
+      </div>
+      <div class="jbook__leaf" data-leaf>
+        <div class="jbook__face jbook__face--f"><figure class="jp" style="--x:11%;--y:7%;--w:78%;--r:2deg"><img data-src="assets/img/about/j-rocks.webp" width="1000" height="750" alt="Someone standing on dark rocks, looking out over a grey sea"><i class="jbook__tape" aria-hidden="true"></i></figure><figure class="jp" style="--x:9%;--y:52%;--w:41%;--r:-5deg"><img data-src="assets/img/about/j-street.webp" width="750" height="1000" alt="A narrow stone street in an old Italian town under a blue sky"><i class="jbook__tape" aria-hidden="true"></i></figure><figure class="jp" style="--x:54%;--y:56%;--w:39%;--r:4deg"><img data-src="assets/img/about/music-guitar-1200.webp" width="1200" height="1200" alt="Jaime on stage at Cégeps en spectacle 2024, playing into a microphone"><i class="jbook__tape" aria-hidden="true"></i></figure></div>
+        <div class="jbook__face jbook__face--b"></div>
+      </div>
+      </div>
+      </div>
+    </div>
+    <button class="jbook__nav jbook__nav--prev" type="button" data-jbook-prev aria-label="The page before" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="jbook__nav jbook__nav--next" type="button" data-jbook-next aria-label="Turn the page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="jbook__close" type="button" data-jbook-close aria-label="Close the journal"><span></span><span></span></button>
+  </div>
+
+  <!-- ══════════════════════════ THE TELEVISION ══════════════════════════ -->
+  <!-- The old television drifts by itself. Pass 78: it has channels — each one a film of him — and they are zapped:
+       its knobs (a click on the set's right side), the two round buttons under it, or the arrow keys.
+       Channel 1 is the night at Cégeps en spectacle: only his six minutes of the stream (1:50:20 → 1:56:30), no more;
+       channel 2 the Dolomites. A channel is one line here: data-ch, its film (a file, or a YouTube id with start and end). -->
+  <section class="tvfly col" id="music" aria-label="Jaime, on television">
+    <figure class="tvfly__fig stagevid">
+      <div class="tvfly__stage">
+        <canvas class="tvfly__canvas" data-den="tv" aria-hidden="true"></canvas>
+        <div class="stagevid__frame tvfly__screen" data-den-screen data-tv aria-label="Jaime&rsquo;s television">
+          <div class="tvch" data-ch data-yt="PSomwu9KssM" data-start="6620" data-end="6990" data-title="Live at C&eacute;geps en spectacle 2024" data-sub="C&eacute;gep du Vieux Montr&eacute;al" data-head="Me, playing Ronroco.">
+            <button class="stagevid__cover" type="button" data-ch-play aria-label="Play: Jaime at C&eacute;geps en spectacle 2024, six minutes">
+              <img src="assets/img/about/cegeps-2024-cover.webp" width="1920" height="1080" alt="" loading="lazy">
+              <span class="stagevid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg></span>
+            </button>
+          </div>
+          <div class="tvch" data-ch data-film="assets/video/tv-dolomites.mp4" data-title="The Dolomites, 2023" data-sub="Italy" data-head="Exploring the Dolomites." hidden>
+            <button class="stagevid__cover" type="button" data-ch-play aria-label="Play: the Dolomites, 2023">
+              <img src="assets/img/about/tv-dolomites-cover.webp" width="1280" height="720" alt="" loading="lazy">
+              <span class="stagevid__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg></span>
+            </button>
+          </div>
+          <div class="tvch__snow" data-tv-snow aria-hidden="true"></div>
+          <div class="tvch__osd" data-tv-osd aria-hidden="true"></div>
+        </div>
+        <button class="tvfly__knobs" type="button" data-tv-next aria-label="Next channel" tabindex="-1"></button>
+      </div>
+    </figure>
+    <div class="tvfly__side">
+      <h2 class="tvfly__h" aria-live="polite">Me, playing Ronroco.</h2>
+      <button class="btn tvfly__zap" type="button" data-tv-next>Zap</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/main.js?v=122"></script>
+<script src="assets/js/about.js?v=18"></script>
+<script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
+<script type="module" src="assets/js/about-world.js?v=25"></script>
+<script type="module" src="assets/js/den.js?v=17"></script>
+<script src="assets/js/feel.js?v=71"></script>
+</body>
+</html>

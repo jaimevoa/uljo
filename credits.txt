@@ -1,0 +1,9 @@
+ULJO — 3D credits
+
+Character, planet and space-ghost: Jaime Olivares, generated with Meshy (meshy.ai); the character rigged and animated there, the ghost from his own pixel sprite.
+Classical guitar: "Guitar" by Zsky — CC BY 3.0 — https://poly.pizza/m/HIyVF2jsHR (recoloured, resized).
+Grass tufts: Quaternius — CC0 — https://poly.pizza/u/Quaternius
+3D engine: three.js r160 (MIT). Mesh decoder: Draco (Google, Apache 2.0).
+Rotary phone: CC BY — https://poly.pizza/m/esa-gfuZgup
+Page turn (journal pages, and slower for its cover): "Turning a page" by planish — public domain — https://commons.wikimedia.org/wiki/File:Turning_a_page.ogg (cut to 1.6 s).
+Television zap: "Static B" by Oreocooke — CC0 — https://commons.wikimedia.org/wiki/File:Static_B.wav (a third of a second of it).
