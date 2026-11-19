@@ -1,0 +1,92 @@
+/* =====================================================================
+   TRACK ON — desktop layer (Mac app; in a browser add ?desktop).
+   Same tokens and components as the phone; only layout changes.
+   Grid: sidebar 244 · content margin 44 · logo baseline = title baseline · first nav item = chip row.
+   ===================================================================== */
+html.desktop{ --side:244px; --m:44px; --col:820px; --t-display:40px; }
+html.desktop .desk-only{display:revert !important;}
+html.desktop .icon-btn.desk-only{display:flex !important;}
+html.desktop .mob-only{display:none !important;}
+html.desktop,html.desktop body{height:100%;overflow:hidden;background:var(--bg);}
+html.desktop body{display:block;}
+html.desktop .stage{padding:0;width:100%;height:100%;}
+html.desktop .phone{width:100vw;height:100vh;border-radius:0;box-shadow:none;}
+html.desktop .phone::before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--side);background:var(--bg);z-index:30;}
+html.desktop .statusbar,html.desktop .island{display:none;}
+
+/* ---------- sidebar = the tab bar standing up ---------- */
+html.desktop .tabbar,html.desktop .tabbar.off{left:10px;top:10px;bottom:10px;right:auto;width:224px;height:auto;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:2px;
+  padding:43px 12px 22px;border-radius:18px;background:var(--night);transform:none;opacity:1;pointer-events:auto;}
+html.desktop .tabbar::before{display:none;}
+html.desktop .tb-logo{order:0;height:21px;width:auto;align-self:flex-start;fill:var(--on-night);margin:0 12px 22px;}
+html.desktop .tb{order:2;flex:0 0 42px;height:42px;justify-content:flex-start;gap:12px;padding:0 12px;border-radius:12px;font-size:20px;}
+html.desktop .tb[data-tb="home"]{order:1;}
+html.desktop .tb[data-tb="insp"]{order:3;}
+html.desktop .tb-label{position:static;width:auto;height:auto;overflow:visible;clip:auto;font-size:15px;font-weight:500;}
+html.desktop .tb:hover{background:var(--night-2);}
+html.desktop .tb.active{background:var(--night-2);}
+html.desktop .tb.active::before{top:50%;left:-12px;width:3px;height:24px;margin:-12px 0 0;border-radius:0 3px 3px 0;}
+html.desktop .tb-rec{order:9;align-self:center;flex:0 0 72px;width:72px;height:72px;margin:auto 0 6px;}
+html.desktop .tb-rec:hover{transform:scale(1.05);}
+
+/* ---------- content ---------- */
+html.desktop .screen{left:var(--side);border-radius:0;}
+html.desktop .screen.active{box-shadow:-24px 0 48px rgba(22,22,22,.08);}
+html.desktop .top{padding-top:30px;}
+html.desktop .head{padding-top:6px;}
+html.desktop .chips{padding-top:19px;}
+html.desktop .search{padding-top:10px;}
+html.desktop .body{padding:10px var(--m) 48px;}
+html.desktop .grid{column-count:4;column-gap:14px;}
+html.desktop .tile{margin-bottom:14px;}
+html.desktop .fab{right:32px;bottom:32px;}
+html.desktop .toast{left:calc(50% + var(--side) / 2);bottom:36px;}
+html.desktop .icon-btn:hover{background:var(--fill-2);}
+html.desktop .btn:hover{filter:brightness(1.08);}
+html.desktop .chip:hover{border-color:var(--muted-2);}
+html.desktop .memo-row:hover .memo-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+
+/* song: one centred column */
+html.desktop #screen-song .bar,html.desktop .song-card,html.desktop .dock > *{width:100%;max-width:var(--col);margin-left:auto;margin-right:auto;}
+html.desktop #screen-song .bar{padding:0;}
+html.desktop .song-body{padding:12px var(--m) 24px;}
+html.desktop .song-card{padding:28px;min-height:calc(100% - 4px);}
+html.desktop .lyrics{min-height:260px;font-size:18px;}
+html.desktop .mood{column-count:3;}
+html.desktop .dock{padding:10px var(--m) 26px;}
+
+/* friends: list + conversation side by side */
+html.desktop #screen-friends{right:auto;width:420px;border-right:1px solid var(--line);}
+html.desktop #screen-friends .body{padding-bottom:40px;}
+html.desktop .thread{padding:12px;margin:0 -12px;width:calc(100% + 24px);border-radius:var(--r-md);border-bottom-color:transparent;}
+html.desktop .thread:hover,html.desktop .thread.sel{background:var(--card);}
+html.desktop .unread-dot{left:4px;}
+html.desktop .phone #screen-chat{left:calc(var(--side) + 420px);visibility:hidden;}
+html.desktop .phone.on-friends #screen-chat{visibility:visible;opacity:1 !important;transform:none !important;z-index:3;box-shadow:none;transition:none;}
+html.desktop #screen-chat [data-back]{visibility:hidden;}
+html.desktop #screen-chat .top{border-bottom:1px solid var(--line);padding-bottom:10px;}
+html.desktop .chat-body{padding:20px 40px;}
+html.desktop .bubble{max-width:60%;}
+html.desktop .chat-bar{padding:12px 32px 24px;}
+
+/* sheet → centred dialog that grows from where you clicked */
+html.desktop .sheet{left:var(--side);right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;padding:24px;
+  transform:none !important;opacity:0;transition:opacity .2s ease;filter:drop-shadow(0 24px 50px rgba(22,22,22,.18));}
+html.desktop .sheet.show{opacity:1;transition:opacity .25s ease;}
+html.desktop .sheet-card{width:460px;max-width:100%;max-height:82vh;border-radius:28px;padding:24px 26px 26px;
+  transform-origin:var(--ox,50%) var(--oy,50%);transform:scale(.94);transition:transform .28s var(--exit);}
+html.desktop .sheet.show .sheet-card{transform:none;transition:transform .55s var(--spring);}
+html.desktop .sheet-card::before{display:none;}
+html.desktop .onboard{left:0;background:rgba(217,217,212,.92);align-items:center;justify-content:center;padding:0;}
+html.desktop .onboard-card{width:520px;height:440px;background:var(--card);border-radius:32px;padding:40px 44px 36px;display:flex;flex-direction:column;}
+html.desktop .menu-item:hover,html.desktop .cell:hover{background:var(--fill-2);}
+html.desktop .cell{padding:0 8px;margin:0 -8px;border-radius:var(--r-sm);}
+
+@media (prefers-reduced-motion: reduce){
+  html.desktop .sheet-card{transition:none !important;transform:none !important;}
+}
+
+/* profile: one calm column */
+html.desktop #profileBody > *{max-width:560px;margin-left:0;margin-right:0;}
+html.desktop .me{align-items:flex-start;}
+html.desktop .me-name{text-align:left;}

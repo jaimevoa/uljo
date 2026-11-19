@@ -1,0 +1,82 @@
+[
+{
+"t": "Gnossienne No. 1",
+"a": "Erik Satie",
+"p": "La Pianista",
+"f": "gnossienne-1",
+"d": 218,
+"lic": "Public domain",
+"src": "commons.wikimedia.org/wiki/File:Satie_-_Gnossienne_1.ogg",
+"c": "img/cv/erik-satie.jpg"
+},
+{
+"t": "Clair de lune",
+"a": "Claude Debussy",
+"p": "piano",
+"f": "clair-de-lune",
+"d": 304,
+"lic": "Public domain",
+"src": "commons.wikimedia.org/wiki/File:Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg",
+"c": "img/cv/claude-debussy.jpg"
+},
+{
+"t": "Nocturne in E-flat, Op. 9 No. 2",
+"a": "Frédéric Chopin",
+"p": "Frank Levy",
+"f": "nocturne-9-2",
+"d": 271,
+"lic": "Public domain",
+"src": "commons.wikimedia.org/wiki/File:Chopin_-_Nocturne_No._2_in_E-flat_major,_Op._9_No._2_(Frank_Levy).flac",
+"c": "img/cv/frédéric-chopin.jpg"
+},
+{
+"t": "Träumerei",
+"a": "Robert Schumann",
+"p": "piano",
+"f": "traumerei",
+"d": 203,
+"lic": "Public domain",
+"src": "commons.wikimedia.org/wiki/File:Robert_Schumann_-_scenes_from_childhood,_op._15_-_vii._dreaming.ogg",
+"c": "img/cv/robert-schumann.jpg"
+},
+{
+"t": "Rêverie",
+"a": "Claude Debussy",
+"p": "piano",
+"f": "reverie",
+"d": 292,
+"lic": "Public domain",
+"src": "commons.wikimedia.org/wiki/File:Reverie.ogg",
+"c": "img/cv/claude-debussy.jpg"
+},
+{
+"t": "Gnossienne No. 3",
+"a": "Erik Satie",
+"p": "La Pianista",
+"f": "gnossienne-3",
+"d": 163,
+"lic": "Public domain",
+"src": "commons.wikimedia.org/wiki/File:Gnossienne_3_(Satie).ogg",
+"c": "img/cv/erik-satie.jpg"
+},
+{
+"t": "Nocturne in A-flat, Op. 32 No. 2",
+"a": "Frédéric Chopin",
+"p": "Olga Gurevich",
+"f": "nocturne-32-2",
+"d": 343,
+"lic": "Public domain",
+"src": "commons.wikimedia.org/wiki/File:Chopin_-_Nocturne_No._10_in_A-flat_major,_Op._32_No._2_(Olga_Gurevich).flac",
+"c": "img/cv/frédéric-chopin.jpg"
+},
+{
+"t": "Nocturne in E, Op. 62 No. 2",
+"a": "Frédéric Chopin",
+"p": "Luke Faulkner",
+"f": "nocturne-62-2",
+"d": 340,
+"lic": "Public domain",
+"src": "commons.wikimedia.org/wiki/File:Chopin_-_Nocturne_No._18_in_E_major,_Op._62_No._2_(Luke_Faulkner).flac",
+"c": "img/cv/frédéric-chopin.jpg"
+}
+]

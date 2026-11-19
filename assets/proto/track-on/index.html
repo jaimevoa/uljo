@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Track On" />
+  <meta name="theme-color" content="#D9D9D4" />
+  <title>Track On</title>
+  <link rel="stylesheet" href="vendor/phosphor/regular/style.css" />
+  <link rel="stylesheet" href="vendor/phosphor/bold/style.css" />
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css" />
+  <script>if(/[?&]desktop\b/.test(location.search)||window.TRACKON_NATIVE) document.documentElement.classList.add('desktop');</script>
+  <link rel="stylesheet" href="css/app.css?v=8" />
+  <link rel="stylesheet" href="css/desktop.css?v=12" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="logo" viewBox="0 0 371.49 83.75">
+      <g>
+        <path d="M232.93,81.9l-15.9.03c-.77,0-1.46-.48-1.74-1.2l-7.69-19.97c-.48-1.25-2.05-1.61-3.01-.68l-4.57,4.41c-.28.27-.47.63-.55,1.02l-2.82,14.87c-.17.89-.93,1.54-1.83,1.54h-14.17c-1.17.01-2.05-1.07-1.83-2.25L193.61,1.55c.17-.89.93-1.54,1.83-1.54h14.16c1.17,0,2.05,1.08,1.83,2.25l-6.52,34.78c-.35,1.84,1.86,3.03,3.15,1.69l14.48-14.98c.35-.36.83-.57,1.33-.57l15.66.05c1.68,0,2.49,2.1,1.27,3.28l-19.06,18.42c-.56.54-.74,1.39-.43,2.12l13.33,32.21c.52,1.25-.38,2.63-1.71,2.64Z"/>
+        <path d="M81.87,83.09c-10.39-1.84-15.13-9.36-13.95-20.22.61-5.55,3.62-9.94,8.59-12.28,14.06-6.63,31.22-1.26,31.52-10.36.09-2.62-1.34-5.03-4.26-5.63-5.7-1.17-10.8.7-12.57,6.08-.25.76-.96,1.27-1.75,1.27h-13.18c-1.21,0-2.11-1.17-1.81-2.36,2.05-8.06,7.88-14.1,15.82-16.4,10.35-3.01,26.51-2.52,32.53,6.96,2.45,3.85,3.21,8.73,2.35,13.37l-5.91,31.59c-.29,1.56-.27,3.15-.1,4.72.13,1.12-.75,2.09-1.85,2.09h-13.32c-.9.01-1.67-.65-1.84-1.55-.06-.31-.11-.62-.16-.93-.23-1.48-1.96-2.11-3.06-1.13-4.67,4.17-10.69,5.91-17.05,4.78ZM86.83,69.35c1.49,1.7,3.75,1.85,5.75,1.91,5.31.17,10.28-2.96,11.42-8.4l1.04-5c.29-1.39-.96-2.57-2.3-2.21-6.15,1.66-13.19,1.6-15.88,4.61-2.14,2.4-2.24,6.59-.03,9.09Z"/>
+        <path d="M281.71,83.73c-6.71.2-12.72-1.07-18.09-4.54-5.38-3.48-9.2-8.51-10.49-14.96-1.8-8.99-.52-18.32,3.89-26.21,6-10.73,16.53-16.68,28.48-16.41,5.74.13,11.16,1.23,16.12,4.38,5.44,3.47,9.35,8.63,10.66,15.2,4.14,20.79-8.69,41.9-30.56,42.55ZM275.12,69.01c4.76,2.98,10.54,1.39,13.88-2.62,2.36-2.83,3.96-5.98,4.75-9.63,1.48-6.86,1.79-16.43-3.42-20.22-3.34-2.43-8.33-2.25-11.6.23-9.93,7.52-10.49,27.94-3.61,32.24Z"/>
+        <path d="M350.59,38.13c-4.32-2.77-9.71-1.13-12.72,2.66-2.19,2.76-3.42,5.85-4.07,9.38l-5.68,30.2c-.17.89-.93,1.54-1.83,1.54h-14.39c-1.17,0-2.05-1.08-1.83-2.25l10.41-54.92c.17-.89.94-1.54,1.83-1.54h13.81c1.17,0,2.05,1.09,1.83,2.26l-.03.18c-.34,1.81,1.79,3,3.11,1.73s2.8-2.45,4.53-3.4c4.71-2.59,10.19-3.23,15.35-1.66,9.16,2.78,11.75,12.93,10.13,22.54l-6.76,35.54c-.17.89-.94,1.54-1.83,1.54h-14.37c-1.17,0-2.05-1.09-1.83-2.26l6.6-34.67c.03-.14.04-.28.03-.42-.07-2.39-.11-5.04-2.29-6.44Z"/>
+        <path d="M147.53,68.41c3.62,2.01,7.78,1.59,11.11-.24.1-.06.2-.12.29-.2,2.31-1.84,3.76-4.19,4.59-7.1.23-.8.96-1.34,1.78-1.34h13.66c1.21,0,2.1,1.16,1.81,2.36-2.34,9.69-9.1,17.36-18.57,20.32-14.77,4.62-33.25-1.2-36.36-16.96-1.83-9.28-.53-18.94,4.07-27.12,3.66-6.49,8.82-11.63,15.67-14.31,11.55-4.51,28.35-2.61,34.55,8.79,1.61,2.97,2.35,6.17,2.68,9.52.11,1.12-.75,2.09-1.85,2.09h-13.86c-.91,0-1.68-.68-1.84-1.6-.42-2.49-1.31-4.87-3.55-6.07-4.89-2.62-10.81-.62-13.78,4.13-5.3,8.5-7.25,23.92-.4,27.73Z"/>
+        <path d="M28.08,70.54l-1.92,9.86c-.15.76-.73,1.35-1.47,1.5-8.23,1.61-19.74,1.1-22.87-6.51-1.21-2.93-1.38-6.4-.77-9.59l5.38-28.43c.22-1.16-.64-2.24-1.8-2.26l-2.78-.04c-1.16-.02-2.02-1.1-1.8-2.26l1.53-8.06c.17-.89.93-1.54,1.82-1.54h4.22c.89-.01,1.66-.66,1.82-1.55l2.89-15.43c.17-.89.93-1.54,1.82-1.54l14.04-.04c1.17,0,2.06,1.09,1.83,2.26l-2.69,14.03c-.22,1.17.66,2.26,1.83,2.26h5.66c1.17,0,2.05,1.1,1.83,2.27l-1.57,8.07c-.17.89-.94,1.53-1.83,1.53h-7.13c-.89,0-1.66.65-1.83,1.54l-5.08,27.21c-.39,2.08.91,4.21,2.9,4.35,1.42.1,2.73.11,4.12.09,1.18-.02,2.08,1.09,1.85,2.27Z"/>
+        <path d="M52.18,54.46l-4.92,25.93c-.17.89-.94,1.54-1.83,1.54h-14.37c-1.17,0-2.05-1.09-1.83-2.26l10.4-54.92c.17-.89.93-1.54,1.83-1.54h13.71c1.17,0,2.05,1.08,1.83,2.26h0c-.35,1.8,1.76,3,3.09,1.76,3.93-3.68,8.61-5.49,14.43-4.78,1.07.13,1.81,1.17,1.6,2.26l-2.52,12.98c-.19.96-1.05,1.6-2,1.52-6.47-.56-12.54.84-15.92,6.5-1.54,2.58-2.88,5.5-3.5,8.76Z"/>
+      </g>
+    </symbol>
+  </svg>
+  <input type="file" accept="image/*" id="fileInput" hidden />
+
+  <div class="stage">
+    <div class="phone" id="phone">
+      <div class="statusbar" aria-hidden="true">
+        <span class="sb-time">9:41</span>
+        <span class="sb-icons">
+          <svg width="19" height="12" viewBox="0 0 19 12" fill="currentColor"><rect x="0" y="8" width="3.4" height="4" rx="1"/><rect x="5" y="5.5" width="3.4" height="6.5" rx="1"/><rect x="10" y="3" width="3.4" height="9" rx="1"/><rect x="15" y="0" width="3.4" height="12" rx="1"/></svg>
+          <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 9.7a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2Zm-3.1-2.9a4.9 4.9 0 0 1 6.2 0 .8.8 0 0 1-1 1.2 3.3 3.3 0 0 0-4.2 0 .8.8 0 1 1-1-1.2Zm-2.9-3A9.2 9.2 0 0 1 8.5 1.7c2.3 0 4.4.8 6 2.1a.8.8 0 1 1-1 1.2 7.6 7.6 0 0 0-10 0 .8.8 0 0 1-1-1.2Z"/></svg>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x=".5" y=".5" width="21" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="1.8" fill="currentColor"/><path d="M23.5 4v4a2 2 0 0 0 0-4Z" fill="currentColor" opacity=".4"/></svg>
+        </span>
+      </div>
+      <div class="island"></div>
+
+      <!-- IDEAS -->
+      <section class="screen active" id="screen-home">
+        <header class="top">
+          <div class="head"><h1 class="title">Ideas</h1><div class="head-icons"><button class="icon-btn do-search" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button><button class="icon-btn desk-only go-profile" aria-label="Profile"><i class="ph ph-user-circle"></i></button></div></div>
+          <div class="search"><i class="ph ph-magnifying-glass"></i><input data-scope="home" placeholder="Search ideas and lyrics" autocomplete="off" /><button class="search-cancel">Cancel</button></div>
+          <div class="chips" id="homeChips"></div>
+        </header>
+        <div class="body" id="homeBody"><div class="list" id="ideasList"></div><div class="empty" id="homeEmpty" hidden></div></div>
+      </section>
+
+      <!-- SONG -->
+      <section class="screen" id="screen-song">
+        <header class="top">
+          <div class="bar">
+            <button class="icon-btn" data-back aria-label="Back"><i class="ph ph-caret-left"></i></button>
+            <div class="seg" id="songTabs"><button class="seg-btn active" data-tab="song">Song</button><button class="seg-btn" data-tab="mood">Moodboard</button></div>
+            <button class="icon-btn" id="songShare" aria-label="Send to a friend"><i class="ph ph-paper-plane-tilt"></i></button>
+          </div>
+        </header>
+        <div class="body song-body" id="songBody">
+          <article class="song-card" id="songCard">
+            <div class="song-head">
+              <button class="cover" id="songCover" aria-label="Add a picture"><i class="ph ph-image"></i></button>
+              <div class="song-meta"><input class="song-title" id="songTitle" placeholder="Name this idea" autocomplete="off" /><div class="song-sub" id="songSub"></div></div>
+              <button class="icon-btn" id="songMore" aria-label="More"><i class="ph ph-dots-three"></i></button>
+            </div>
+            <div id="songPane"></div>
+          </article>
+        </div>
+        <footer class="dock" id="dock"></footer>
+      </section>
+
+      <!-- INSPIRATION -->
+      <section class="screen" id="screen-insp">
+        <header class="top">
+          <div class="head"><h1 class="title">Inspiration</h1><div class="head-icons"><button class="icon-btn do-search" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button><button class="icon-btn desk-only go-profile" aria-label="Profile"><i class="ph ph-user-circle"></i></button></div></div>
+          <div class="search"><i class="ph ph-magnifying-glass"></i><input data-scope="insp" placeholder="Search notes and links" autocomplete="off" /><button class="search-cancel">Cancel</button></div>
+          <div class="chips" id="boardChips"></div>
+        </header>
+        <div class="body"><div class="grid" id="inspGrid"></div><div class="empty" id="inspEmpty" hidden></div></div>
+        <button class="fab" id="inspAdd" aria-label="Add inspiration"><i class="ph ph-plus"></i></button>
+      </section>
+
+      <!-- FRIENDS -->
+      <section class="screen" id="screen-friends">
+        <header class="top">
+          <div class="head"><h1 class="title">Friends</h1><div class="head-icons"><button class="icon-btn" id="newMsg" aria-label="New message"><i class="ph ph-note-pencil"></i></button><button class="icon-btn desk-only go-profile" aria-label="Profile"><i class="ph ph-user-circle"></i></button></div></div>
+          <div class="seg seg-wide" id="friendTabs"><button class="seg-btn active" data-ftab="chats">Chats</button><button class="seg-btn" data-ftab="feed">Feed</button></div>
+        </header>
+        <div class="body"><div id="chatsPanel"></div><div id="feedPanel" hidden></div></div>
+      </section>
+
+      <!-- CONVERSATION -->
+      <section class="screen" id="screen-chat">
+        <header class="top"><div class="bar"><button class="icon-btn" data-back aria-label="Back"><i class="ph ph-caret-left"></i></button><div class="chat-who" id="chatWho"></div><span class="icon-btn-space"></span></div></header>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-bar"><button class="icon-btn" id="chatShare" aria-label="Share an idea"><i class="ph ph-plus"></i></button><input id="chatInput" placeholder="Message" autocomplete="off" /><button class="send" id="chatSend" aria-label="Send"><i class="ph-bold ph-arrow-up"></i></button></div>
+      </section>
+
+      <!-- PROFILE -->
+      <section class="screen" id="screen-profile">
+        <header class="top"><div class="head"><h1 class="title">Profile</h1></div></header>
+        <div class="body" id="profileBody"></div>
+      </section>
+
+      <!-- TAB BAR / SIDEBAR -->
+      <nav class="tabbar" id="tabbar">
+        <svg class="logo tb-logo desk-only" viewBox="0 0 371.49 83.75" role="img" aria-label="track on"><use href="#logo"/></svg>
+        <button class="tb tb-line" data-tb="home"><i class="ph-bold ph-waveform"></i><span class="tb-label">Ideas</span></button>
+        <button class="tb" data-tb="friends"><i class="ph-bold ph-users"></i><i class="ph-fill ph-users"></i><span class="tb-label">Friends</span></button>
+        <button class="tb-rec" id="tbRecord" aria-label="New recording"></button>
+        <button class="tb" data-tb="insp"><i class="ph-bold ph-sparkle"></i><i class="ph-fill ph-sparkle"></i><span class="tb-label">Inspiration</span></button>
+        <button class="tb mob-only" data-tb="profile"><i class="ph-bold ph-user-circle"></i><i class="ph-fill ph-user-circle"></i><span class="tb-label">Profile</span></button>
+      </nav>
+
+      <!-- ONE SHEET FOR EVERY POP-UP -->
+      <div class="scrim" id="scrim"></div>
+      <div class="sheet" id="sheet" role="dialog" aria-modal="true"><div class="sheet-card" id="sheetCard"></div></div>
+
+      <!-- ONBOARDING -->
+      <div class="onboard" id="onboard" hidden></div>
+
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+  </div>
+
+  <script src="js/audio.js?v=2"></script>
+  <script src="js/app.js?v=35"></script>
+  <script src="js/corners.js?v=2"></script>
+</body>
+</html>
